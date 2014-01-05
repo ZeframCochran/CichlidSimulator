@@ -24,18 +24,39 @@ public class AddObject {
     
     /**
      * This method sends the addObject request to the appropriate add<Object> method.
-     * 
+     * It seems like this logic would be better captured elsewhere.
+     * Perhaps in the abstract parent?
      * @param object The JSONObject containing the attributes of the object to add.
      */
     public static void addObject(JSONObject object) {       
         IGameObject.Type type = IGameObject.Type.valueOf(object.get("Type").toString());       
-        switch(type) {
-            case TANK : if(Tank.isCreated()) {Logger.outputToGUI(Logger.Type.ERROR, "Tank already added to world. Start a new simulation to add a different tank."); return;} else {if(addTank(object)) {break;} else {return;}}
-            case FISH : if(Tank.isCreated()) {if(addFish(object)) {break;} else {return;}} else {Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); return;}
-            case PLANT : if(Tank.isCreated()) {if(addPlant(object)) {break;} else {return;}} else {Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); return;}
-            case POT : if(Tank.isCreated()) {if(addPot(object)) {break;} else {return;}} else {Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); return;}
-            default : Logger.outputToGUI(Logger.Type.ERROR, "Object of type " + type + " cannot be added to the game world.");
+        if(Tank.isCreated()){
+            switch(type) {
+                case TANK : 
+                    Logger.outputToGUI(Logger.Type.ERROR, "Tank already added to world. Start a new simulation to add a different tank.");
+                    break;
+                case FISH : 
+                    addFish(object);
+                    break;
+                case PLANT:
+                    addPlant(object);
+                    break;
+                case POT  : if(Tank.isCreated()) 
+                    addPot(object);
+                    break;
+                default : Logger.outputToGUI(Logger.Type.ERROR, "Object of type " + type + " cannot be added to the game world.");
+            }
         }
+        else{
+            switch(type) {
+                case TANK : addTank(object); break;
+                case FISH : Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); break;
+                case PLANT: Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); break;
+                case POT  : Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); break;
+                default   : Logger.outputToGUI(Logger.Type.ERROR, "Object of type " + type + " cannot be added to the game world.");
+            }
+        }
+        
         Logger.outputToGUI(Logger.Type.INFO, "Added to the game world: " + object);       
     }
     
