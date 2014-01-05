@@ -1,0 +1,13 @@
+import cichlid_sim.game.objects.Fish;
+import cichlid_sim.engine.ai.AIActions;
+
+rule "Decide which object or property to react to."
+when
+    otherFish:Fish ($size : size)//Bind the size to a variable called $size
+    thisFish:Fish(size < $size)//compare this fishe's size to the other's
+then
+    //Delay for the fish to "think"
+    (new AIActions()).delayAction(thisFish, 500);
+    //Flee action
+    (new AIActions()).fleeAction(thisFish, otherFish);
+end

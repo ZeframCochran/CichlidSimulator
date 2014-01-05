@@ -1,0 +1,12 @@
+import cichlid_sim.game.objects.Fish;
+import cichlid_sim.game.ai.AIActions;
+
+rule "Act when a larger fish is near"
+when
+    otherFish:Fish ($size : size)//Bind the size to a variable called $size
+    thisFish:Fish(size < $size)//compare this fishe's size to the other's
+    
+then
+    //Flee action
+    (new AIActions()).fleeAction(thisFish, otherFish);
+end

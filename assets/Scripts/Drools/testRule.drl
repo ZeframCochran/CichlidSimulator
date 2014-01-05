@@ -1,0 +1,9 @@
+import cichlid_sim.game.objects.Fish;
+import cichlid_sim.engine.ai.AIActions;
+
+rule "Fire this rule every update."//Rule title
+when//If all of the following are true
+    myFish:Fish (size != 9)//Bind the fish to a variable called myFish
+then//A series of actions.
+    (new AIActions()).testAction(myFish);
+end
