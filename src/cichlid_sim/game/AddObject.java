@@ -26,6 +26,8 @@ public class AddObject {
      * This method sends the addObject request to the appropriate add<Object> method.
      * It seems like this logic would be better captured elsewhere.
      * Perhaps in the abstract parent?
+     * Also addObject not addPot/Fish/whatever :[
+     *
      * @param object The JSONObject containing the attributes of the object to add.
      */
     public static void addObject(JSONObject object) {       
@@ -49,11 +51,10 @@ public class AddObject {
         }
         else{
             switch(type) {
-                case TANK : addTank(object); break;
-                case FISH : Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); break;
-                case PLANT: Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); break;
-                case POT  : Logger.outputToGUI(Logger.Type.ERROR, "Tank must be created before adding other objects."); break;
-                default   : Logger.outputToGUI(Logger.Type.ERROR, "Object of type " + type + " cannot be added to the game world.");
+                case TANK : 
+                    addTank(object); 
+                    break;
+                default   : Logger.outputToGUI(Logger.Type.ERROR, "Object of type " + type + " could not be added to the game world.");
             }
         }
         
