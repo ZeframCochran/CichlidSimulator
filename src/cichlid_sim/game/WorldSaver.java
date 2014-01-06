@@ -61,13 +61,13 @@ public class WorldSaver {
      */
     private static JSONObject recurseIntoWorld(JSONObject world, Node node) {
         for(Spatial spatial : node.getChildren()) {
-            if(spatial instanceof IGameObject) {                                //Check if it's a game object first (some IGameObjects may be Nodes);
-                JSONObject gameObjectJSON = ((IGameObject)spatial).toJSON();    //It's a game object. Convert it to JSON;
-                world.append(gameObjectJSON.get("Type").toString(), gameObjectJSON); //And add the JSON to the world JSONObject;
+            if(spatial instanceof IGameObject) {                                //Check if it's a game object first (some IGameObjects may be Nodes)
+                JSONObject gameObjectJSON = ((IGameObject)spatial).toJSON();    //It's a game object. Convert it to JSON
+                world.append(gameObjectJSON.get("Type").toString(), gameObjectJSON); //And add the JSON to the world JSONObject
             }
-            else {                                                              //It's not a game object;
-                if(spatial instanceof Node) {                                   //Maybe it's another node;
-                    recurseIntoWorld(world, (Node)spatial);                     //It is. Check that node for game objects;
+            else {                                                              //It's not a game object
+                if(spatial instanceof Node) {                                   //Maybe it's another node
+                    recurseIntoWorld(world, (Node)spatial);                     //It is. Check that node for game objects
                 }
             }
         }

@@ -22,7 +22,7 @@ public class CustomNode extends Node{
     
     public CustomNode(String name) {
         super(name);
-        //Register this node with the NodeCollection;
+        //Register this node with the NodeCollection
         NodeCollection.addNode(this, name);
         childrenToAdd = new ArrayList();
         childrenToRemove = new ArrayList();
@@ -82,14 +82,14 @@ public class CustomNode extends Node{
      */
     @Override
     public synchronized void updateGeometricState() {
-        //Remove all children in the childrenToRemove list;
+        //Remove all children in the childrenToRemove list
         while(!childrenToRemove.isEmpty()) {
             Spatial child = childrenToRemove.get(0);
             super.detachChild(child);
             Logger.outputToGUI(Logger.Type.DEBUG, "Child " + child.getName() + " DETACHED from node " + this.getName());
             childrenToRemove.remove(child);
         }
-        //Add all children in the childrenToAdd list;
+        //Add all children in the childrenToAdd list
         while(!childrenToAdd.isEmpty()) {
             Spatial child = childrenToAdd.get(0);
             super.attachChild(child);
@@ -97,7 +97,7 @@ public class CustomNode extends Node{
             childrenToAdd.remove(child);
         }
         
-        //java.util.ConcurrentModificationException happens with the below code. Which is why we do the goofy iterate above;
+        //java.util.ConcurrentModificationException happens with the below code. Which is why we do the goofy iterate above
         /*
         if(!childrenToRemove.isEmpty()) {
             Iterator<Spatial> iter = childrenToRemove.iterator();
@@ -108,7 +108,7 @@ public class CustomNode extends Node{
             }
             childrenToRemove.clear();
         }
-        //Add all children in the childrenToAdd list;
+        //Add all children in the childrenToAdd list
         if(!childrenToAdd.isEmpty()) {
             for(Iterator<Spatial> iter = childrenToAdd.iterator(); iter.hasNext();) {
                 Spatial child = iter.next();
@@ -118,7 +118,7 @@ public class CustomNode extends Node{
             childrenToAdd.clear();
         }
         */
-        //Update the scene graph;
+        //Update the scene graph
         super.updateGeometricState();
     }
     

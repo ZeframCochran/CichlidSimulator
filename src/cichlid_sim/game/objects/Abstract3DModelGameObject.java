@@ -29,11 +29,11 @@ public abstract class Abstract3DModelGameObject extends AbstractGameObject {
     public Abstract3DModelGameObject(String name, int uniqueID, Spatial model, float modelScaleFactor) {
         super(name, uniqueID);
         this.attachChild(model);
-        //Scale the model by modelScaleFactor to 'shrink/expand' the model to an approximate size of 1cm;
+        //Scale the model by modelScaleFactor to 'shrink/expand' the model to an approximate size of 1cm
         model.scale(modelScaleFactor);
         model.updateModelBound();
         
-        //add a 1cm axis to the model (useful for testing);
+        //add a 1cm axis to the model (useful for testing)
         Axes modelAxes = new Axes("ModelAxes:" + model.getName(), (float)Length.cmToWorldUnits(1.0f));
         AxesToggleActionHandler.addAxes(modelAxes);
         this.attachChild(modelAxes); 
@@ -62,10 +62,10 @@ public abstract class Abstract3DModelGameObject extends AbstractGameObject {
      * @param selected The object to attach the visible bounding volume.
      */
     public void attachBoundingBox() {
-        /* //With official bounding volumes;
+        /* //With official bounding volumes
         BoundingBox bBox = (BoundingBox) selected.getWorldBound();
         WireBox wireBox = new WireBox(bBox.getXExtent(), bBox.getYExtent(), bBox.getZExtent());
-        //wireBox.fromBoundingBox((BoundingBox)selected.getWorldBound());
+        //wireBox.fromBoundingBox((BoundingBox)selected.getWorldBound())
         Geometry boundsBox = new Geometry("Box",wireBox);
         Material material = new Material(GameAppManager.getMainGame().getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");
         material.setColor("Color", ColorRGBA.White);
@@ -73,9 +73,9 @@ public abstract class Abstract3DModelGameObject extends AbstractGameObject {
         boundsBox.updateModelBound();
         selected.attachChild(boundsBox);
         */
-        //Official jme bounding box is way too big. Unsure why but think it may have to do with multi-part 3d models;
-        //So I created a custom parameter in each 3dModel game object to store the approximate bounds of the object;
-        //This method displays those bounds as a 'bounding box';
+        //Official jme bounding box is way too big. Unsure why but think it may have to do with multi-part 3d models
+        //So I created a custom parameter in each 3dModel game object to store the approximate bounds of the object
+        //This method displays those bounds as a 'bounding box'
         Vector3f bounds = this.getModelBounds();
         bounds = bounds.divide(this.getSize());
 

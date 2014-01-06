@@ -41,16 +41,16 @@ public class MainGame extends com.jme3.app.SimpleApplication {
     @Override
     public void simpleInitApp() {
         java.util.Random rand = new java.util.Random();
-        //Store frequently used game objects in static locations in the game engine;
+        //Store frequently used game objects in static locations in the game engine
         GameAppManager.setMainGame(this);
         GameRandomManager.setRand(rand);
-        //Load the models used during the game;
+        //Load the models used during the game
         loadObjectModels();
         setupAppSettings();
         setupInputBinds();
         setupWorld();
         
-        //Load a previous world save just so we can continue testing;
+        //Load a previous world save just so we can continue testing
         loadWorldFromFile();
     }
 
@@ -58,15 +58,15 @@ public class MainGame extends com.jme3.app.SimpleApplication {
      * This method initializes the default settings for this program.
      */
     private void setupAppSettings() {
-        //Set the camera settings;
+        //Set the camera settings
         cam.setFrustumPerspective(60f, (float) cam.getWidth() / cam.getHeight(), 0.01f, 1000f);
         flyCam.setMoveSpeed(3);
-        //Turns logging off except for severe errors;
-        //java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.SEVERE);
-        //Turns off on-screen debug output;
+        //Turns logging off except for severe errors
+        //java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.SEVERE)
+        //Turns off on-screen debug output
         setDisplayStatView(false);
         setDisplayFps(false);
-        //Enables click and drag to rotate camera instead of using arrow keys;
+        //Enables click and drag to rotate camera instead of using arrow keys
         flyCam.setDragToRotate(true);
         //Allows the game canvas to continue unpaused while it does not contain focus (ie: when the outer GUI has focus).
         this.setPauseOnLostFocus(false);
@@ -98,19 +98,19 @@ public class MainGame extends com.jme3.app.SimpleApplication {
      * to load and store all 3d models used in this program;
      */
     private void loadObjectModels() {
-        //Load fish;
+        //Load fish
         Models.addModelFromFile("Fish.Male", Models.Type.FISH, "Models/Fish/Male.j3o", "Textures/Fish/Male.png");
         Models.addModelFromFile("Fish.Female", Models.Type.FISH, "Models/Fish/Female.j3o", "Textures/Fish/Female.png");
 
-        //Load Pots;
+        //Load Pots
         Models.addModelFromFile("Pot", Models.Type.POT, "Models/Pots/JustPot.j3o", "Textures/Pot/brown.png");
 
-        //Load Plants;
+        //Load Plants
         Models.addModelFromFile("Plant", Models.Type.PLANT, "Models/Plants/Plant.j3o", "Textures/Plant/Plant.png");
     }
     
     private void setupWorld() {
-        //Set up the Node structure for game objects;
+        //Set up the Node structure for game objects
         CustomNode clickableObjectNode = new CustomNode("ClickableObjectNode");
         CustomNode nonClickableObjectNode = new CustomNode("NonClickableObjectNode");
         CustomNode gameObjectNode = new CustomNode("GameObjectNode");
@@ -119,32 +119,35 @@ public class MainGame extends com.jme3.app.SimpleApplication {
         gameObjectNode.attachChild(nonClickableObjectNode);
         rootNode.attachChild(gameObjectNode);
         
-        //Set up the different tank nodes for storing fish;
-        //CustomNode arenaTank = new CustomNode("ArenaTank");         //Fish in the arena tank are stored in the FishNode;
-        CustomNode stockTank = new CustomNode("StockTank");         //Fish in the stock and isolation tanks shouldn't be displayed in the arena tank.
+        //Set up the different tank nodes for storing fish
+        //CustomNode arenaTank = new CustomNode("ArenaTank")
+        //Fish in the arena tank are stored in the FishNode
+        CustomNode stockTank = new CustomNode("StockTank");         
+        //Fish in the stock and isolation tanks shouldn't be displayed in the arena tank.
         CustomNode isolationTank = new CustomNode("IsolationTank");
         
-        stockTank.setCullHint(Spatial.CullHint.Always);             //So, cull the nodes;
+        //So, cull the nodes
+        stockTank.setCullHint(Spatial.CullHint.Always);             
         isolationTank.setCullHint(Spatial.CullHint.Always);
         
         nonClickableObjectNode.attachChild(stockTank);
         nonClickableObjectNode.attachChild(isolationTank);
                 
-        //Register those Nodes with the NodeCollection;
+        //Register those Nodes with the NodeCollection
         cichlid_sim.game.NodeCollection.addNode(rootNode, "RootNode");
-        //CustomNode objects are automatically added to the NodeCollection;
-        //cichlid_sim.game.NodeCollection.addNode(clickableObjectNode, "ClickableObjects");
-        //cichlid_sim.game.NodeCollection.addNode(nonClickableObjectNode, "NonClickableObjects");
-        //cichlid_sim.game.NodeCollection.addNode(gameObjectNode, "GameObjectNode");
+        //CustomNode objects are automatically added to the NodeCollection
+        //cichlid_sim.game.NodeCollection.addNode(clickableObjectNode, "ClickableObjects")
+        //cichlid_sim.game.NodeCollection.addNode(nonClickableObjectNode, "NonClickableObjects")
+        //cichlid_sim.game.NodeCollection.addNode(gameObjectNode, "GameObjectNode")
         
-        //Setup GameObject Nodes;
+        //Setup GameObject Nodes
         setupTank(nonClickableObjectNode);
         setupFish(clickableObjectNode);
         setupPots(clickableObjectNode);
         setupPlants(clickableObjectNode);
         setupAxes(nonClickableObjectNode);
         
-        //Setup Lights;
+        //Setup Lights
         setupLights();
         
                 
@@ -182,7 +185,7 @@ public class MainGame extends com.jme3.app.SimpleApplication {
      */
     private void setupPots(Node parent) {
         CustomNode potNode = new CustomNode("PotNode");
-        //Pots are too light by default. A reverse ambient light fixes that;
+        //Pots are too light by default. A reverse ambient light fixes that
         AmbientLight al;
         al = new AmbientLight();
         al.setColor(ColorRGBA.White.mult(-1.5f));        
@@ -217,13 +220,13 @@ public class MainGame extends com.jme3.app.SimpleApplication {
      * This method adds lighting to the game world.
      */
     private void setupLights() {
-        //Add simple light so we can see the world;
+        //Add simple light so we can see the world
         com.jme3.light.DirectionalLight sun = new com.jme3.light.DirectionalLight();
         sun.setColor(com.jme3.math.ColorRGBA.White.mult(0.5f));
         sun.setDirection(new com.jme3.math.Vector3f(-0.2f, -1.0f, -0.2f));
         rootNode.addLight(sun);
         
-        //Add ambient light for a more realistic look;
+        //Add ambient light for a more realistic look
         com.jme3.light.AmbientLight al = new com.jme3.light.AmbientLight();
         al.setColor(com.jme3.math.ColorRGBA.White.mult(2.0f));
         rootNode.addLight(al);
@@ -239,21 +242,21 @@ public class MainGame extends com.jme3.app.SimpleApplication {
     public void simpleUpdate(float tpf) {
         //Do the things that need to be done once... this really shouldn't be here but it needs to happen after the app starts ... -_-
         if(!done) {
-            //Disable zoom on mouse wheel scroll;
+            //Disable zoom on mouse wheel scroll
             inputManager.deleteMapping("FLYCAM_ZoomIn");
             inputManager.deleteMapping("FLYCAM_ZoomOut");
             done = true;
         }
-        //Check if 'skip forward' has been requested;
+        //Check if 'skip forward' has been requested
         if(TimeManipulationActionHandler.getSkipRequested()) {
             this.batchUpdate(TimeManipulationActionHandler.getSkipRequestedSeconds());
             TimeManipulationActionHandler.resetSkipRequested();
         }
         
-        //Multiply the time since last frame by the current game speed to determine how much game time has passed;
+        //Multiply the time since last frame by the current game speed to determine how much game time has passed
         float gameSpeed = TimeManipulationActionHandler.getCurrentSpeed();
         tpf *= gameSpeed;
-        //If the current speed is less than the default speed run update once;
+        //If the current speed is less than the default speed run update once
         if(gameSpeed < 1) {
             customUpdate(tpf);
         }
@@ -273,12 +276,12 @@ public class MainGame extends com.jme3.app.SimpleApplication {
              * by the AI and without being rendered to the display. 
              */
             for(int i=0;i<(int)gameSpeed;i++) {
-                customUpdate(tpf/gameSpeed);    //Update @ the normal tpf (int)gameSpeed # times;
+                customUpdate(tpf/gameSpeed);    //Update @ the normal tpf (int)gameSpeed # times
             }
-            //Update @ normal tpf * (int)gameSpeed 1 more time;
+            //Update @ normal tpf * (int)gameSpeed 1 more time
             customUpdate(tpf - ((int)gameSpeed * tpf / gameSpeed));
         }
-        //Update the GUI's clock display with the current game time;
+        //Update the GUI's clock display with the current game time
         PipeToGUI.setGameClock(TimeManipulationActionHandler.getGameTime());
     }
     
@@ -294,7 +297,7 @@ public class MainGame extends com.jme3.app.SimpleApplication {
         float desiredTPF = 1/targetFPS;                 //If this is too high we wont get acurate updates (because on each update objects move proportaional to this amount).
         if(tpf > desiredTPF) {
             float numUpdatesRequired = tpf*targetFPS;   //How many times will we need to update with a tpf value of desiredTPF?
-            for(int i=0;i<numUpdatesRequired;i++) {     //Update that many times with tpf value = desiredTPF;
+            for(int i=0;i<numUpdatesRequired;i++) {     //Update that many times with tpf value = desiredTPF
                 customUpdate(desiredTPF);
             }
         }
@@ -310,14 +313,14 @@ public class MainGame extends com.jme3.app.SimpleApplication {
      * @param tpf Time in between each update.
      */
     private void customUpdate(float tpf) {
-        //Check if pause has been requested;
-        if(PauseActionHandler.getPaused()) {//Game is paused, so only update things that should be updated while game is paused. ... 'pause menu animation' ... duno;
+        //Check if pause has been requested
+        if(PauseActionHandler.getPaused()) {//Game is paused, so only update things that should be updated while game is paused. ... 'pause menu animation' ... duno
         }
-        else {                              //Game is not paused, so update things that should only be updated while the game is not paused, like the game clock;
-            //Increment the game time;
+        else {                              //Game is not paused, so update things that should only be updated while the game is not paused, like the game clock
+            //Increment the game time
             TimeManipulationActionHandler.incrementGameTime(tpf);
         }
-        //Fish update regardless of pause (when game = paused fish don't move but are free to idle animate);
+        //Fish update regardless of pause (when game = paused fish don't move but are free to idle animate)
         realAI.update(tpf);
     }
     

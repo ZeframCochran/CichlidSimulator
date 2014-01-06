@@ -51,19 +51,19 @@ public class RealAI {
      * @param tpf 
      */
     public void update(float tpf) {
-                //Check if pause has been requested;
+                //Check if pause has been requested
         boolean pauseRequested = cichlid_sim.engine.action.PauseActionHandler.getPaused();
-        //Update all fish. If pauseRequested then each Fish is expected to perform its idle animation in-place;
+        //Update all fish. If pauseRequested then each Fish is expected to perform its idle animation in-place
         Node fishNode = cichlid_sim.game.NodeCollection.getNode("FishNode");
-        for (Spatial spatialObj : fishNode.getChildren()) {         //Iterate over all fish;
-            ((Fish) spatialObj).update(tpf, pauseRequested);        //Update the fish;
+        for (Spatial spatialObj : fishNode.getChildren()) {         //Iterate over all fish
+            ((Fish) spatialObj).update(tpf, pauseRequested);        //Update the fish
             if(!pauseRequested) {
                 workingMemory.insert(((Fish) spatialObj));
             }
         }
         Node potNode  = cichlid_sim.game.NodeCollection.getNode("PotNode");
         
-        for (Spatial spatialObj : potNode.getChildren()) {         //Iterate over all fish;
+        for (Spatial spatialObj : potNode.getChildren()) {         //Iterate over all fish
             workingMemory.insert(((Pot) spatialObj));
         }
         
@@ -71,10 +71,10 @@ public class RealAI {
         workingMemory.fireAllRules();
 
         //If there is no reaction in progress, move about at random.
-        for (Spatial spatialObj : fishNode.getChildren()) {         //Itterate over all fish;
-            if(!pauseRequested && !((Fish) spatialObj).isMoving()) {                  //If fish is done moving;
-                ((Fish) spatialObj).setMoveSpeed(0.5f + rand.nextFloat() * 0.5f);   //Set the fish's new movement speed;
-                ((Fish) spatialObj).setDestinationLocation(GameRandomManager.getRandom3DPointWithinArenaTank(((Fish) spatialObj).getModelBounds()));   //Set the fish's new destination;
+        for (Spatial spatialObj : fishNode.getChildren()) {         //Itterate over all fish
+            if(!pauseRequested && !((Fish) spatialObj).isMoving()) {                  //If fish is done moving
+                ((Fish) spatialObj).setMoveSpeed(0.5f + rand.nextFloat() * 0.5f);   //Set the fish's new movement speed
+                ((Fish) spatialObj).setDestinationLocation(GameRandomManager.getRandom3DPointWithinArenaTank(((Fish) spatialObj).getModelBounds()));   //Set the fish's new destination
             }
         }
 
@@ -166,8 +166,8 @@ public class RealAI {
     private WorkingMemory initializeMessageObjects(RuleBase ruleBase) {
         WorkingMemory workingMemory = ruleBase.newStatefulSession();
 
-  //      createHelloWorld(workingMemory);
- //       createHighValue(workingMemory);
+  //      createHelloWorld(workingMemory)
+ //       createHighValue(workingMemory)
 
         return workingMemory;
     }

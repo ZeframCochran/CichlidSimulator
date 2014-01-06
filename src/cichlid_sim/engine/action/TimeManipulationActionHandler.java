@@ -6,7 +6,7 @@ package cichlid_sim.engine.action;
  * @author Wesley Perry
  */
 public class TimeManipulationActionHandler {
-    private static final float STEP = 1.0f;//0.25f;
+    private static final float STEP = 1.0f;//0.25f
     private static float currentSpeed = 1;
     private static double gameTime = 0;
     private static boolean skipRequested = false;
@@ -85,8 +85,7 @@ public class TimeManipulationActionHandler {
      * @param seconds How much time (in seconds) to skip forward from the current game time.
      */
     public static void skipForward(int seconds) {
-        //The following could modify the game after updateGeometricState(), so we just set flags to let MainGame know that a skip has been requested;
-        //GameAppManager.getMainGame().batchUpdate(seconds);  //does the whole skip in one frame, can take a while for large jumps;
+        //The following could modify the game after updateGeometricState(), so we just set flags to let MainGame know that a skip has been requested
         secondsToSkip = seconds;
         skipRequested = true;
     }
@@ -127,12 +126,12 @@ public class TimeManipulationActionHandler {
     private static boolean skipForwardActive = false;
     private static float backupSpeed;
     private static double skipForwardEndTime;
-    public static void skipForward2(int seconds) {          //skips over several frames. has some issues with 'over shooting' though;
+    public static void skipForward2(int seconds) {          //skips over several frames. has some issues with 'over shooting' though
         double currentGameTime = gameTime;
         skipForwardEndTime = currentGameTime + seconds;
         backupSpeed = currentSpeed;
         skipForwardActive = true;
-        currentSpeed = 1000000;    //Turbo mode;
+        currentSpeed = 1000000;    //Turbo mode
     }
     
     private static void resetSkipSettings() {

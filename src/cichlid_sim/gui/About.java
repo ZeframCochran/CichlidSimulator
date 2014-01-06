@@ -41,7 +41,6 @@ public class About extends JDialog implements ActionListener, MouseListener{
 	 */
 	public About() {
 		setResizable(false);
-		//setModal(true);
 		setTitle("About");
 		setBounds(100, 100, 634, 688);
 		getContentPane().setLayout(null);

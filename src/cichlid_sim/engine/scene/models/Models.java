@@ -91,7 +91,8 @@ public class Models
     
     public static com.jme3.material.Material createMaterial() {
         com.jme3.material.Material material = new com.jme3.material.Material(cichlid_sim.engine.app.GameAppManager.getMainGame().getAssetManager(), "Common/MatDefs/Light/Lighting.j3md");
-        material.getAdditionalRenderState().setFaceCullMode(com.jme3.material.RenderState.FaceCullMode.Off);    //Turns off backface culling (default) so the back side of models are rendered;
+        //Turns off backface culling (default) so the back side of models are rendered
+        material.getAdditionalRenderState().setFaceCullMode(com.jme3.material.RenderState.FaceCullMode.Off);    
         return material;
     }
     

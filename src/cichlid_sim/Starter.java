@@ -27,33 +27,33 @@ public class Starter
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                //Create the main Graphical User Interface;
+                //Create the main Graphical User Interface
                 MainGUI gui = new MainGUI();                
                 
-                //Get the center panel from the GUI;
+                //Get the center panel from the GUI
                 JPanel tankPanel = gui.getTankPanel();
                 Dimension dim = tankPanel.getPreferredSize();
 
-                //Initialize a jme AppSettings object with the desired jme canvas width and height;
+                //Initialize a jme AppSettings object with the desired jme canvas width and height
                 AppSettings settings = new AppSettings(true);
                 settings.setWidth(dim.width);
                 settings.setHeight(dim.height);
-                settings.setFrameRate(60);  //Set soft fps limit;
+                settings.setFrameRate(60);  //Set soft fps limit
 
-                //Create and initialize the main jme game;
+                //Create and initialize the main jme game
                 MainGame mainGame = new MainGame();
                 mainGame.setSettings(settings);
-                mainGame.createCanvas();    //Creates a jme canvas;
+                mainGame.createCanvas();    //Creates a jme canvas
                 JmeCanvasContext ctx = (JmeCanvasContext) mainGame.getContext();
                 ctx.setSystemListener(mainGame);
-                ctx.getCanvas().setPreferredSize(dim);  //Match the jme cavas size with the GUI canvas size;
+                ctx.getCanvas().setPreferredSize(dim);  //Match the jme cavas size with the GUI canvas size
 
-                //Add the jme canvas to the GUI;
+                //Add the jme canvas to the GUI
                 tankPanel.add(ctx.getCanvas(), java.awt.BorderLayout.CENTER);
                 gui.pack();
 
-                //gui.setVisible(true);
-                mainGame.startCanvas(); //Start the game loop;
+                //gui.setVisible(true)
+                mainGame.startCanvas(); //Start the game loop
             }
         });
     }

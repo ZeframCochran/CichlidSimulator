@@ -22,9 +22,9 @@ public class PipeInit {
     public static void FromPipe(JSONObject obj)
     {
        
-       //StockTankDisplay.setJSONArray(PipeFromGUI.getStockTankObjects());
+       //StockTankDisplay.setJSONArray(PipeFromGUI.getStockTankObjects())
        /*Testing the pipe with the stock panel*/
-       // StockTankDisplay.stockTankObject(obj);
+       // StockTankDisplay.stockTankObject(obj)
      
     }
 }

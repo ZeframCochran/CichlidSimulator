@@ -60,7 +60,7 @@ public class PipeFromGUI {
      * TankX is the Lenght, TankY is the Height, TankZ is the width
      */
     public static void updateTankSize(JSONObject object){
-        //GameWorld.updateTank(object);
+        //GameWorld.updateTank(object)
         System.out.println(object);
     }
     /**

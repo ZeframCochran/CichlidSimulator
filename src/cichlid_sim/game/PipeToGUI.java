@@ -46,7 +46,7 @@ public class PipeToGUI {
      * @param gameSpeed The current speed of the game.
      */
     public static void setGameSpeedDisplay(float gameSpeed) {
-        //Static method in GUI to set the display of gameSpeed;
+        //Static method in GUI to set the display of gameSpeed
         MainGUI.speedDisplay(gameSpeed);
     }
     
@@ -58,8 +58,8 @@ public class PipeToGUI {
      */
     public static void logOutput(Logger.Type type, String output) {
         //Static method in GUI package for outputting logging info.
-        //The below line should be removed once GUI output is working;
-        //LogReport.logReports(type,output);
+        //The below line should be removed once GUI output is working
+        //LogReport.logReports(type,output)
         System.err.println(""+type+" "+output);
       
     }

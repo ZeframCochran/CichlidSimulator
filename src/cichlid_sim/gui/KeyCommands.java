@@ -26,7 +26,7 @@ public class KeyCommands extends JDialog implements ActionListener {
      */
     public KeyCommands() {
         setModal(true);
-        //setResizable(false);
+        //setResizable(false)
         setLocationRelativeTo(null);
         setTitle("Key Commands");
         setBounds(100, 100, 600, 450);

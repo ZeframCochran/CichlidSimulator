@@ -2,6 +2,7 @@ package cichlid_sim.engine.action;
 
 import cichlid_sim.engine.app.GameAppManager;
 import cichlid_sim.engine.input.IClickableObject;
+import cichlid_sim.engine.logger.Logger;
 import cichlid_sim.game.NodeCollection;
 import cichlid_sim.game.PipeToGUI;
 import cichlid_sim.game.objects.IGameObject;
@@ -19,10 +20,15 @@ import com.jme3.scene.Node;
  *
  * @author Wesley Perry
  */
-public class ClickActionHandler {
+public class ClickActionHandler{
     
     private static Node previouslySelectedObject = null;
     private static AmbientLight highlighter = null;
+    
+    /*
+     * Private constructor to make sure this cannot be instantiated.
+     */
+    private ClickActionHandler(){}
     
     /**
      * The action to take place when the mouse is clicked within the JME canvas.
@@ -31,9 +37,9 @@ public class ClickActionHandler {
      * The first clickable object the ray hits is said to have been clicked and
      * is highlighted.
      */
+    //TODO: Rewrite so that is does now throw exceptions.
     public static void mouseClicked() {
-        if(highlighter == null || previouslySelectedObject == null)
-        {
+        if(highlighter == null || previouslySelectedObject == null){
             highlighter = new AmbientLight();
             highlighter.setColor(com.jme3.math.ColorRGBA.White.mult(5.0f));
         }
@@ -41,52 +47,55 @@ public class ClickActionHandler {
             previouslySelectedObject.removeLight(highlighter);
         }
 
-        //Build the ray;
+        //Build the ray
         Camera cam = GameAppManager.getMainGame().getCamera();
         Vector2f cursorScreenPos = GameAppManager.getMainGame().getInputManager().getCursorPosition();
         Vector3f cursorWorldPos = cam.getWorldCoordinates(new Vector2f(cursorScreenPos.x,cursorScreenPos.y), 0);
-        Vector3f direction = new Vector3f(cursorWorldPos.subtract(cam.getLocation()));  //I'm not sure what the above does, this works fine;
+        //I'm not sure what the above does, this works fine
+        Vector3f direction = new Vector3f(cursorWorldPos.subtract(cam.getLocation()));  
         Ray ray = new Ray(cam.getLocation(), direction);
-        //Collide the ray with the clickable objects node;
+        //Collide the ray with the clickable objects node
         Node clickableObjects = NodeCollection.getNode("ClickableObjectNode");
         CollisionResults results = new CollisionResults();
         clickableObjects.collideWith(ray, results);
-        //Grab the closest object;
+        //Grab the closest object
         CollisionResult closest = results.getClosestCollision();
         
-        //Apply highlighting so we can see that it worked. Eventually we'll want a tool tip or similar;
-        //Highlight via applying a local ambient light;
+        //Apply highlighting so we can see that it worked. Eventually we'll want a tool tip or similar
+        //Highlight via applying a local ambient light
         try{    
             Node selected = closest.getGeometry().getParent();
-            while(true) {
+            boolean found = false;
+            while(!found) {
                 //The part of the object that is clicked will not be the actual object itself. Instead it will be a sub-part of the object. So we do .getParent() until we either get a IClickableObject or null.
-                if(selected instanceof IClickableObject) {
-                    //Add highliting on the selected object;
+                if(selected instanceof IClickableObject){
+                    //Add highliting on the selected object
                     selected.addLight(highlighter);
                     previouslySelectedObject = selected;
                     
-                    if(selected instanceof IGameObject) {
-                        /*  //Adds a 'bounding box' around the clicked object. Very helpful when debugging model size;
+                    if(selected instanceof IGameObject){
+                        /*  //Adds a 'bounding box' around the clicked object. Very helpful when debugging model size
                         if(selected instanceof cichlid_sim.game.objects.Abstract3DModelGameObject) {
                             ((cichlid_sim.game.objects.Abstract3DModelGameObject)selected).attachBoundingBox();
                         }
                         */
-                        //Send the selected game object to the GUI;
+                        //Send the selected game object to the GUI
                         PipeToGUI.gameWorldObjectSelected(((IGameObject)selected).toJSON());
                     }
-                    break;
-                }
-                else {
-                    //Looking for the clickable object. Do getParent() and loop if parent isn't null;
+                    found = true;
+                }else{
+                    //Looking for the clickable object. Do getParent() and loop if parent isn't null
                     selected = selected.getParent();
-                    if(selected == null) {  //This will happen if a non-ClickableObject is added to the ClickableObject node;
-                        break;              //Our program will happily catch this crash and plug right along... Wesley is working on a fix for this;
+                    //This will happen if a non-ClickableObject is added to the ClickableObject node
+                    //Our program will happily catch this crash and plug right along... Wesley is working on a fix for this
+                    if(selected == null){  
+                        break;              
                     }
                 }
             }
         }
         catch(NullPointerException e) {
-            //No object collided with the ray;
+            Logger.outputToGUI(Logger.Type.ERROR, "No object collided with the ray"+e);
             previouslySelectedObject = null;
         }
     }

@@ -125,10 +125,18 @@ public class AddObject {
             fish.setHomeTank(tankType);
 
             switch(tankType) {
-                case ARENA : NodeCollection.getNode("FishNode").attachChild(fish); break;
-                case STOCK : NodeCollection.getNode("StockTank").attachChild(fish); break; //GameObjectCollection.getArray("StockTank").add(fish); break;
-                case ISOLATION : NodeCollection.getNode("IsolationTank").attachChild(fish); break; //GameObjectCollection.getArray("IsolationTank").add(fish); break;
-                default : Logger.outputToGUI(Logger.Type.ERROR, "Unknown tank type: " + tankType);
+                case ARENA : 
+                    NodeCollection.getNode("FishNode").attachChild(fish); 
+                    break;
+                case STOCK : 
+                    NodeCollection.getNode("StockTank").attachChild(fish); 
+                    break;
+                case ISOLATION : 
+                    NodeCollection.getNode("IsolationTank").attachChild(fish); 
+                    break;
+                default : 
+                    Logger.outputToGUI(Logger.Type.ERROR, "Unknown tank type: " + tankType);
+                    break;
             }
             return true;
         }

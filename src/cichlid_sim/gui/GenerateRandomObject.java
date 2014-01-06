@@ -60,7 +60,7 @@ public class GenerateRandomObject extends JDialog implements ActionListener {
             setSize(346,367);
             setLocationRelativeTo(null);
 
-            //setBounds(100, 100, 346, 367);
+            //setBounds(100, 100, 346, 367)
             getContentPane().setLayout(new BorderLayout());
             contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
             getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -244,7 +244,6 @@ public class GenerateRandomObject extends JDialog implements ActionListener {
             obj.put("Type", "FISH");
             obj.put("Tank", Tank.Type.ARENA);
             obj.put("Size",new Float(random.nextFloat()*(fishSize[0]-fishSize[1])+fishSize[1]));
-        //    obj.put("Height",new Integer(random.nextInt(50 - 10) + 10));
             obj.put("Weight",new Integer(random.nextInt(50 - 10) + 10));
             obj.put("Aggression",new Integer(random.nextInt(50 - 10) + 10));
             obj.put("Health",new Integer(random.nextInt(100 - 90) + 90));

@@ -46,10 +46,10 @@ public class Tank extends AbstractGameObject
     public Tank(String name, int uniqueID, Vector3f size)
     {
         super(name, uniqueID);
-        //Save the input size so we can spit it back out in the toJSON() ... damn floating point inacuracies...;
+        //Save the input size so we can spit it back out in the toJSON() ... damn floating point inacuracies...
         this.savedSize = size;
-        //Internally, length is defined from the origin outward in the positive and negative directions;
-        //To keep the tank sides the correct size we divide by 2;
+        //Internally, length is defined from the origin outward in the positive and negative directions
+        //To keep the tank sides the correct size we divide by 2
         //(Side length = 5 = (-2.5 <-- 0 --> 2.5)
         size = size.divide(2);
         xSize = (float)Length.cmToWorldUnits(size.x);
@@ -74,7 +74,7 @@ public class Tank extends AbstractGameObject
      * @param tankZ 1/2 of the Z bound of the tank. 
      */
     private void setupTankOutline(AssetManager assetManager, float tankX, float tankY, float tankZ) {
-        //Create the outline for the tank;
+        //Create the outline for the tank
         WireBox tankOutline = new WireBox(tankX, tankY, tankZ);
         Geometry tankBox = new Geometry("Box",tankOutline);
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
@@ -92,7 +92,7 @@ public class Tank extends AbstractGameObject
      * @param tankZ 1/2 of the Z bound of the tank. 
      */
     private void setupGlassEdge(AssetManager assetManager, float tankX, float tankY, float tankZ) {
-        //Create the tanks semitransparent 'glass' edges;
+        //Create the tanks semitransparent 'glass' edges
         Box b = new Box(tankX, tankY, tankZ);
         Geometry tank = new Geometry("Box", b);
         Material material2 = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
@@ -110,9 +110,9 @@ public class Tank extends AbstractGameObject
     private void setupWallpaper(AssetManager assetManager) {
         CustomNode wallpaperNode = new CustomNode("TankWallpaper");
         
-        //Create the panels that will become the tanks wallpaper;
+        //Create the panels that will become the tanks wallpaper
         
-        //Front and back;
+        //Front and back
         Quad front = new Quad(xSize*2, ySize*2);
         Geometry frontGeom = new Geometry("frontPanel", front);
         Geometry backGeom = new Geometry("backPanel", front);
@@ -120,7 +120,7 @@ public class Tank extends AbstractGameObject
         Texture textureFront =  GameAppManager.getMainGame().getAssetManager().loadTexture("Textures/Tank/Front.jpg");
         materialFront.setTexture("DiffuseMap",textureFront);
         backGeom.setMaterial(materialFront);
-        //backGeom.rotate(0, (float)java.lang.Math.toRadians(180), 0);
+        //backGeom.rotate(0, (float)java.lang.Math.toRadians(180), 0)
         backGeom.move(-xSize, -ySize, -zSize);
         frontGeom.setMaterial(materialFront);
         frontGeom.rotate(0, (float)java.lang.Math.toRadians(180), 0);
@@ -128,7 +128,7 @@ public class Tank extends AbstractGameObject
         wallpaperNode.attachChild(frontGeom);
         wallpaperNode.attachChild(backGeom);
         
-        //Left and right;
+        //Left and right
         Quad left = new Quad(zSize*2, ySize*2);
         Geometry leftGeom = new Geometry("leftPanel", left);
         Geometry rightGeom = new Geometry("rightPanel", left);
@@ -144,7 +144,7 @@ public class Tank extends AbstractGameObject
         wallpaperNode.attachChild(leftGeom);
         wallpaperNode.attachChild(rightGeom);
         
-        //Top;
+        //Top
         Quad top = new Quad(xSize*2, zSize*2);
         Geometry topGeom = new Geometry("topPanel", top);
         Material materialTop = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
@@ -153,9 +153,9 @@ public class Tank extends AbstractGameObject
         topGeom.setMaterial(materialTop);
         topGeom.rotate((float)java.lang.Math.toRadians(90), 0, 0);
         topGeom.move(-xSize, ySize, -zSize);
-        //wallpaperNode.attachChild(topGeom);
+        //wallpaperNode.attachChild(topGeom)
         
-        //Bottom;
+        //Bottom
         Geometry bottomGeom = new Geometry("bottomPanel", top);
         Material materialBottom = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
         Texture textureBottom =  GameAppManager.getMainGame().getAssetManager().loadTexture("Textures/Tank/Bottom.jpg");

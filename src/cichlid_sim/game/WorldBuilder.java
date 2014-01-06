@@ -17,22 +17,22 @@ public class WorldBuilder {
      * @param world The JSONObject containing the world data.
      */
     public static void buildWorldFromJSON(JSONObject world) {
-        //Tank must be added first;
+        //Tank must be added first
         if(world.has(IGameObject.Type.TANK.toString()))
         {
-            //Add the tank;
+            //Add the tank
             AddObject.addObject((JSONObject)((JSONArray)world.get(IGameObject.Type.TANK.toString())).get(0));
             
-            //Iterate through the rest of the objects;
+            //Iterate through the rest of the objects
             for(IGameObject.Type type : IGameObject.Type.values()) {
-                //We already added the tank, skip it;
+                //We already added the tank, skip it
                 if(type != IGameObject.Type.TANK) {
                     if(world.has(type.toString())) {
-                        //Grab the JSONArray containing all objects of this type;
+                        //Grab the JSONArray containing all objects of this type
                         JSONArray objects = ((JSONArray)world.get(type.toString()));
-                        //Extract each item from the array;
+                        //Extract each item from the array
                         for(int i=0;i<objects.length();i++) {
-                            //Insert it into the game world;
+                            //Insert it into the game world
                             AddObject.addObject((JSONObject)objects.get(i));
                         }
                     }

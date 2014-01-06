@@ -86,7 +86,7 @@ public class MainGUI extends JFrame implements ActionListener, WindowListener, K
      * Create the frame.
      */
     public MainGUI() {
-        //  addWindowListener(this);
+        //  addWindowListener(this)
         setTitle("Cichlid Behavior Research Simulator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1200, 800);
@@ -99,7 +99,7 @@ public class MainGUI extends JFrame implements ActionListener, WindowListener, K
         topPanel();
         setVisible(true);
         timer.start();
-        //BufferUtils.setTrackDirectMemoryEnabled(true);
+        //BufferUtils.setTrackDirectMemoryEnabled(true)
 
     }
 
@@ -202,7 +202,7 @@ public class MainGUI extends JFrame implements ActionListener, WindowListener, K
         commandPanel.add(logReportButton);
 
         optionPanel.setBorder(new TitledBorder("Tank Options: "));
-        //optionPanel.setLayout(new BoxLayout(optionPanel, BoxLayout.Y_AXIS));
+        //optionPanel.setLayout(new BoxLayout(optionPanel, BoxLayout.Y_AXIS))
         optionPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         temp = new JLabel("Temp: ");
@@ -499,7 +499,7 @@ public class MainGUI extends JFrame implements ActionListener, WindowListener, K
             StockTankDisplay.setJSONArray((JSONArray)PipeFromGUI.getStockTankObjects().get("FISH"));
             myStockTank.init();
         } else if (e.getKeyCode() == KeyEvent.VK_M) {
-          //  EditMenu.init(null);
+          //  EditMenu.init(null)
         } else if (e.getKeyCode() == KeyEvent.VK_L) {
             myReport.init();
         } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {

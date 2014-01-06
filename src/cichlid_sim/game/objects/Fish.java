@@ -43,9 +43,9 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
         super(name, uniqueID, fishModel, FISHMODELSCALINGFACTOR);
         this.size = size;
         this.gender = gender;
-        //Scale the whole fish by fish size to set the fish to the appropriate size;
+        //Scale the whole fish by fish size to set the fish to the appropriate size
         this.scale(size);
-        fishModel.rotate(0,(float)java.lang.Math.toRadians(90),0);  //Ensure that the model is facing the correct direction;
+        fishModel.rotate(0,(float)java.lang.Math.toRadians(90),0);  //Ensure that the model is facing the correct direction
         this.updateModelBound();
         health = 1;
         aggression = 0;
@@ -59,11 +59,11 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
     */
     public void update(float time, boolean pauseRequested) {
         if(!pauseRequested) {
-            moving = move(time);        //Sets the flag if this fish has a destination (isMoving);
+            moving = move(time);        //Sets the flag if this fish has a destination (isMoving)
         }
         else
         {
-            //perform idle animation;
+            //perform idle animation
         }
     }
     
@@ -99,18 +99,18 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
             float curSpeed = moveSpeed * time;
             Vector3f viewDir = direction.normalize();
 
-            Vector3f tempMove = this.getLocalTranslation();     //Make the move on a dummy transform before moving the fish;
+            Vector3f tempMove = this.getLocalTranslation();     //Make the move on a dummy transform before moving the fish
             tempMove = tempMove.add(viewDir.mult(curSpeed));
 
-            float distance = this.getLocation().distance(tempMove); //Get distance that the fish is about to move;
-            if(distance > this.distanceToDestination) { //Fish is about to jump over its destination point;
-                this.setLocalTranslation(this.destinationLocation); //So just snap it to the destination point;
+            float distance = this.getLocation().distance(tempMove); //Get distance that the fish is about to move
+            if(distance > this.distanceToDestination) { //Fish is about to jump over its destination point
+                this.setLocalTranslation(this.destinationLocation); //So just snap it to the destination point
                 this.destinationLocation = null;
-                this.rotateUpTo(worldUpVector);         //Rotate the fish back to standard horizontal 'floating';
+                this.rotateUpTo(worldUpVector);         //Rotate the fish back to standard horizontal 'floating'
             }
             else {
-                this.setLocalTranslation(tempMove);     //Move fish a small amount in the current direction;
-                this.distanceToDestination -= distance; //Remove the travled distance from the distance to travel;
+                this.setLocalTranslation(tempMove);     //Move fish a small amount in the current direction
+                this.distanceToDestination -= distance; //Remove the travled distance from the distance to travel
             }
             return true;
         }

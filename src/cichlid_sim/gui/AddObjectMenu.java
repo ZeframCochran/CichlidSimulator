@@ -85,7 +85,6 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		//contentPanel.setLayout(null);
 		contentPanel.setLayout(new BorderLayout(0,0));		
 		myButton();
 		myLabel();
@@ -125,17 +124,8 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
 		textFieldWeight.setColumns(10);
 		textFieldWeight.setEnabled(false);
                 
-		//textField for Breeding Status
-//		textFieldBreed.setBounds(130, 204, 86, 20);
-//		panel_1.add(textFieldBreed);
-//		textFieldBreed.setColumns(10);
-//		textFieldBreed.setEnabled(false);
-                
+		//textField for Breeding Status                
 		//textField for Time Last Mate
-//		textFieldLastMate.setBounds(130, 234, 86, 20);
-//		panel_1.add(textFieldLastMate);
-//		textFieldLastMate.setColumns(10);
-//		textFieldLastMate.setEnabled(false);
                 
                 textFieldHealth.setBounds(230,267,30,20);
                 panel_1.add(textFieldHealth);
@@ -180,11 +170,6 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
 	}
 	private void myLabel()
 	{
-		
-		//myLabel = new JLabel("ID ");
-		//myLabel.setBounds(210, 10, 14, 14);
-		//contentPanel.add(myLabel);
-		
 		myLabel = new JLabel("Name:");
 		myLabel.setBounds(10, 50, 46, 14);
 		panel_1.add(myLabel);
@@ -204,14 +189,6 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
 		myLabel = new JLabel("Aggr:");
 		myLabel.setBounds(10, 207, 46, 14);
 		panel_1.add(myLabel);
-
-//		myLabel = new JLabel("Breeding Status:");
-//		myLabel.setBounds(10, 207, 110, 14);
-//		panel_1.add(myLabel);
-		
-//		myLabel = new JLabel("Time Last Mate:");
-//		myLabel.setBounds(10, 237, 110, 14);
-//		panel_1.add(myLabel);
 		
 		myLabel = new JLabel("Health:");
 		myLabel.setBounds(10, 267, 46, 14);
@@ -298,14 +275,13 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
 		contentPanel.add(panel);
 		
                 radioButton = new JRadioButton("Arena Tank");
-		//radioButton.setSelected(true);
+		
                 
                 radioButton.addActionListener(this);
 		panel.add(radioButton);
 		tankGroup.add(radioButton);
                 
 		radioButton = new JRadioButton("Stock Tank");
-               // radioButton.setSelected(true);
                 radioButton.addActionListener(this);
 		panel.add(radioButton);
 		tankGroup.add(radioButton);
@@ -657,7 +633,6 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                           if((float)Float.parseFloat(textFieldWeight.getText())>=fishWeight[0]&&(float)Float.parseFloat(textFieldWeight.getText())<=fishWeight[1])
                           {
                             obj.put("Size", new Float(Float.parseFloat(textFieldLength.getText())));
-                        //  obj.put("Height", new Float(Float.parseFloat(textFieldHeight.getText())));
                             obj.put("Weight", new Float(Float.parseFloat(textFieldWeight.getText())));
                             obj.put("Aggression", new Integer(Integer.parseInt(textFieldAggr.getText())));
                             obj.put("Health", Integer.parseInt(textFieldHealth.getText()));                     
@@ -718,7 +693,6 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                 JSONObject obj = new JSONObject();
                 obj.put("Name", textFieldName.getText());
                 obj.put("Size", new Integer(Integer.parseInt(textFieldLength.getText())));
-               // obj.put("Height", new Integer(Integer.parseInt(textFieldHeight.getText())));
                 objectAttrib.put(obj);
                 obj.put("Type","PLANT");               
                 PipeInit.AttribsToPipe(obj);
@@ -735,7 +709,6 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                 JSONObject obj = new JSONObject();
                 obj.put("Name", textFieldName.getText());
                 obj.put("Size", new Integer(Integer.parseInt(textFieldLength.getText())));
-               // obj.put("Height", new Integer(Integer.parseInt(textFieldHeight.getText())));
                 objectAttrib.put(obj);
                 obj.put("Type","POT");               
                 PipeInit.AttribsToPipe(obj);

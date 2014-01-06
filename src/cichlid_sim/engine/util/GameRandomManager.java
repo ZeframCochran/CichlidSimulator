@@ -48,14 +48,14 @@ public class GameRandomManager {
         return getRandom3DPointWithinArenaTank(new Vector3f(0,0,0));
     }
     public static Vector3f getRandom3DPointWithinArenaTank(Vector3f bounds) {
-        //Grab the tank object to retrieve tank bounds;
+        //Grab the tank object to retrieve tank bounds
         Tank tank = (Tank) cichlid_sim.game.NodeCollection.getNode("TankNode").getChild("ArenaTank");
         if(bounds.x > tank.getX() || bounds.y > tank.getY() || bounds.z > tank.getZ()) {
             Logger.outputToGUI(Logger.Type.ERROR, "Tried to generate a random point within the tank but the input bounds are larger than the tank size! Bounds: " + bounds.toString() + ". Tank: " + new Vector3f(tank.getX(), tank.getY(), tank.getZ()).toString() + ".");
             return new Vector3f(0,0,0);
         }
         else {
-            //Create a random point within that tank;
+            //Create a random point within that tank
             return new Vector3f(getRandomFloat(tank.getX()-bounds.x, true),getRandomFloat(tank.getY()-bounds.y, true),getRandomFloat(tank.getZ()-bounds.z, true));
         }
     }

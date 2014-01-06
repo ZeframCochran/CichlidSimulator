@@ -269,7 +269,7 @@ public class StockTank extends JDialog implements ActionListener, MouseListener{
                {               
                      textField_1.setText((String)obj.get("Name")); //Name
                      textField_2.setText(Float.toString((float) obj.getDouble("Size"))); //Length
-//                     textField_3.setText(Float.toString((float) obj.get("Weight"))); //weight
+//                     textField_3.setText(Float.toString((float) obj.get("Weight"))) //weight
                      textField_7.setText(Integer.toString(obj.getInt("Breeding Status"))); //Breed
                      textField_5.setText(Integer.toString(obj.getInt("Aggression"))); //aggr
                      textField_6.setText(Integer.toString(obj.getInt("Health"))); //health                   

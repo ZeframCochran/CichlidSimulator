@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="2.0.1" sequence="0" timestamp="1388361997000" analysisTimestamp="1388365042958" release="">
+<BugCollection version="2.0.1" sequence="0" timestamp="1388994014000" analysisTimestamp="1388994536586" release="">
   <Project>
     <Jar>/home/anony/Desktop/Cichlid Simulator/build</Jar>
-    <AuxClasspathEntry>/tmp/findbugs6335367485106348683.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/tmp/findbugs7528095202613123583.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/tmp/findbugs5376741022603124174.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/tmp/findbugs620753706717912689.jar</AuxClasspathEntry>
     <SrcDir>/home/anony/Desktop/Cichlid Simulator/src</SrcDir>
   </Project>
   <BugInstance type="LI_LAZY_INIT_UPDATE_STATIC" priority="2" abbrev="LI" category="MT_CORRECTNESS" instanceHash="64abe636485e8318d1bf840b1c655e79" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="8">
@@ -973,8 +973,8 @@
     <SourceLine classname="cichlid_sim.gui.LogReport" primary="true" start="164" end="164" startBytecode="126" endBytecode="126" sourcefile="LogReport.java" sourcepath="cichlid_sim/gui/LogReport.java" relSourcepath="cichlid_sim/gui/LogReport.java">
       <Message>At LogReport.java:[line 164]</Message>
     </SourceLine>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="file"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" abbrev="ST" category="STYLE" instanceHash="4a9b5b39de25a1869c261bebb52d9f1" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
@@ -1393,7 +1393,7 @@ there is no easy way to eliminate these false positives.
     <MissingClass>org.drools.rule.Package</MissingClass>
     <MissingClass>org.drools.runtime.rule.FactHandle</MissingClass>
   </Errors>
-  <FindBugsSummary timestamp="Sun, 29 Dec 2013 16:06:37 -0800" total_classes="65" referenced_classes="442" total_bugs="45" total_size="4923" num_packages="13" vm_version="20.0-b12" cpu_seconds="58.26" clock_seconds="33.54" peak_mbytes="296.51" alloc_mbytes="455.12" gc_seconds="2.51" priority_2="32" priority_1="13">
+  <FindBugsSummary timestamp="Sun, 5 Jan 2014 23:40:14 -0800" total_classes="65" referenced_classes="442" total_bugs="45" total_size="4932" num_packages="13" vm_version="20.0-b12" cpu_seconds="57.71" clock_seconds="59.22" peak_mbytes="302.82" alloc_mbytes="455.12" gc_seconds="1.94" priority_2="32" priority_1="13">
     <FileStats path="cichlid_sim/Starter.java" bugCount="0" size="27"/>
     <FileStats path="cichlid_sim/engine/action/AxesToggleActionHandler.java" bugCount="0" size="41"/>
     <FileStats path="cichlid_sim/engine/action/ClickActionHandler.java" bugCount="1" size="35" bugHash="b3f50dbe10e26c6c36e3d77acaa9bbbf"/>
@@ -1415,7 +1415,7 @@ there is no easy way to eliminate these false positives.
     <FileStats path="cichlid_sim/engine/scene/models/Models.java" bugCount="0" size="99"/>
     <FileStats path="cichlid_sim/engine/util/GameRandomManager.java" bugCount="0" size="21"/>
     <FileStats path="cichlid_sim/engine/util/Length.java" bugCount="0" size="10"/>
-    <FileStats path="cichlid_sim/game/AddObject.java" bugCount="0" size="94"/>
+    <FileStats path="cichlid_sim/game/AddObject.java" bugCount="0" size="103"/>
     <FileStats path="cichlid_sim/game/MainGame.java" bugCount="0" size="146"/>
     <FileStats path="cichlid_sim/game/NodeCollection.java" bugCount="0" size="29"/>
     <FileStats path="cichlid_sim/game/PipeFromGUI.java" bugCount="0" size="49"/>
@@ -1494,8 +1494,8 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="cichlid_sim.engine.util.GameRandomManager" sourceFile="GameRandomManager.java" interface="false" size="21" bugs="0"/>
       <ClassStats class="cichlid_sim.engine.util.Length" sourceFile="Length.java" interface="false" size="10" bugs="0"/>
     </PackageStats>
-    <PackageStats package="cichlid_sim.game" total_bugs="0" total_types="10" total_size="408">
-      <ClassStats class="cichlid_sim.game.AddObject" sourceFile="AddObject.java" interface="false" size="88" bugs="0"/>
+    <PackageStats package="cichlid_sim.game" total_bugs="0" total_types="10" total_size="417">
+      <ClassStats class="cichlid_sim.game.AddObject" sourceFile="AddObject.java" interface="false" size="97" bugs="0"/>
       <ClassStats class="cichlid_sim.game.AddObject$1" sourceFile="AddObject.java" interface="false" size="6" bugs="0"/>
       <ClassStats class="cichlid_sim.game.MainGame" sourceFile="MainGame.java" interface="false" size="146" bugs="0"/>
       <ClassStats class="cichlid_sim.game.NodeCollection" sourceFile="NodeCollection.java" interface="false" size="17" bugs="0"/>
@@ -1540,24 +1540,16 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="cichlid_sim.gui.StockTankDisplay" sourceFile="StockTankDisplay.java" interface="false" size="126" bugs="3" priority_2="2" priority_1="1"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="7008" invocations="1708" avgMicrosecondsPerInvocation="4103" maxMicrosecondsPerInvocation="139079" standardDeviationMircosecondsPerInvocation="15148"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="2280" invocations="1705" avgMicrosecondsPerInvocation="1337" maxMicrosecondsPerInvocation="57406" standardDeviationMircosecondsPerInvocation="3985"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1906" invocations="583" avgMicrosecondsPerInvocation="3269" maxMicrosecondsPerInvocation="1264328" standardDeviationMircosecondsPerInvocation="52335"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="1671" invocations="442" avgMicrosecondsPerInvocation="3781" maxMicrosecondsPerInvocation="124960" standardDeviationMircosecondsPerInvocation="11212"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="1474" invocations="442" avgMicrosecondsPerInvocation="3336" maxMicrosecondsPerInvocation="111977" standardDeviationMircosecondsPerInvocation="9821"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1231" invocations="583" avgMicrosecondsPerInvocation="2111" maxMicrosecondsPerInvocation="461013" standardDeviationMircosecondsPerInvocation="19243"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="1075" invocations="442" avgMicrosecondsPerInvocation="2433" maxMicrosecondsPerInvocation="183249" standardDeviationMircosecondsPerInvocation="11200"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="973" invocations="583" avgMicrosecondsPerInvocation="1670" maxMicrosecondsPerInvocation="82644" standardDeviationMircosecondsPerInvocation="4744"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="888" invocations="1612" avgMicrosecondsPerInvocation="551" maxMicrosecondsPerInvocation="538501" standardDeviationMircosecondsPerInvocation="13415"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="877" invocations="621" avgMicrosecondsPerInvocation="1413" maxMicrosecondsPerInvocation="130650" standardDeviationMircosecondsPerInvocation="6013"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="780" invocations="605" avgMicrosecondsPerInvocation="1290" maxMicrosecondsPerInvocation="81619" standardDeviationMircosecondsPerInvocation="4546"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="663" invocations="583" avgMicrosecondsPerInvocation="1138" maxMicrosecondsPerInvocation="95291" standardDeviationMircosecondsPerInvocation="4622"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="631" invocations="1449" avgMicrosecondsPerInvocation="436" maxMicrosecondsPerInvocation="85072" standardDeviationMircosecondsPerInvocation="2535"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="476" invocations="467" avgMicrosecondsPerInvocation="1020" maxMicrosecondsPerInvocation="33192" standardDeviationMircosecondsPerInvocation="2677"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="404" invocations="442" avgMicrosecondsPerInvocation="914" maxMicrosecondsPerInvocation="36464" standardDeviationMircosecondsPerInvocation="3283"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="397" invocations="442" avgMicrosecondsPerInvocation="899" maxMicrosecondsPerInvocation="65149" standardDeviationMircosecondsPerInvocation="3947"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="392" invocations="548" avgMicrosecondsPerInvocation="716" maxMicrosecondsPerInvocation="101202" standardDeviationMircosecondsPerInvocation="4847"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="340" invocations="65" avgMicrosecondsPerInvocation="5241" maxMicrosecondsPerInvocation="174443" standardDeviationMircosecondsPerInvocation="26248"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="24225" invocations="1708" avgMicrosecondsPerInvocation="14183" maxMicrosecondsPerInvocation="347367" standardDeviationMircosecondsPerInvocation="33549"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="1940" invocations="442" avgMicrosecondsPerInvocation="4390" maxMicrosecondsPerInvocation="523487" standardDeviationMircosecondsPerInvocation="26241"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1820" invocations="1705" avgMicrosecondsPerInvocation="1067" maxMicrosecondsPerInvocation="196366" standardDeviationMircosecondsPerInvocation="5279"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="1565" invocations="442" avgMicrosecondsPerInvocation="3542" maxMicrosecondsPerInvocation="1228319" standardDeviationMircosecondsPerInvocation="58423"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1376" invocations="583" avgMicrosecondsPerInvocation="2361" maxMicrosecondsPerInvocation="630024" standardDeviationMircosecondsPerInvocation="26178"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1150" invocations="621" avgMicrosecondsPerInvocation="1852" maxMicrosecondsPerInvocation="64786" standardDeviationMircosecondsPerInvocation="4694"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1146" invocations="583" avgMicrosecondsPerInvocation="1966" maxMicrosecondsPerInvocation="81928" standardDeviationMircosecondsPerInvocation="5938"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="1062" invocations="442" avgMicrosecondsPerInvocation="2404" maxMicrosecondsPerInvocation="59223" standardDeviationMircosecondsPerInvocation="5601"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1058" invocations="583" avgMicrosecondsPerInvocation="1815" maxMicrosecondsPerInvocation="42254" standardDeviationMircosecondsPerInvocation="3881"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="761" invocations="583" avgMicrosecondsPerInvocation="1305" maxMicrosecondsPerInvocation="170307" standardDeviationMircosecondsPerInvocation="7338"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

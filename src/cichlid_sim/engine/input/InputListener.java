@@ -33,7 +33,7 @@ public class InputListener implements com.jme3.input.controls.ActionListener {
      */
     @Override
     public void onAction(String name, boolean keyPressed, float tpf) {
-        if(!keyPressed) //This ensures the action will fire on button DOWN and not on button UP, or is it up and not down?;
+        if(!keyPressed) //This ensures the action will fire on button DOWN and not on button UP, or is it up and not down?
         {
             switch(name)
             {

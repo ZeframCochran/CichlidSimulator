@@ -9,8 +9,8 @@ import java.math.BigDecimal;
  * @author Wesley Perry
  */
 public class Length {
-    //The difference between centimeters and game-world units;
-    public static final BigDecimal scaleFactor = new BigDecimal("0.1");   //0.1f = Each game unit is 10 cm;
+    //The difference between centimeters and game-world units
+    public static final BigDecimal scaleFactor = new BigDecimal("0.1");   //0.1f = Each game unit is 10 cm
     
     /**
      * Converts centimeters to game world units;

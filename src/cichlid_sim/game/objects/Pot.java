@@ -23,7 +23,7 @@ public class Pot extends Abstract3DModelGameObject implements cichlid_sim.engine
     public Pot(String name, int uniqueID, Spatial model, float size)
     {
         super(name, uniqueID, model, POTMODELSCALINGFACTOR);
-        //'Tip' the pot over;
+        //'Tip' the pot over
         model.rotate(0,0,(float)java.lang.Math.toRadians(-90));
         this.scale(size);
         this.size = size;

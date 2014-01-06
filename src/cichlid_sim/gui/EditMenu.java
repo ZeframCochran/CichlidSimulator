@@ -395,7 +395,6 @@ public class EditMenu extends JDialog implements ActionListener, ChangeListener 
                     Apply.setEnabled(true);               
                     nameField.setText(object.getString("Name"));
                     lengthField.setText(Float.toString((float) object.getInt("Size")));
-                   // heightField.setText(Float.toString((float) object.getInt("Size")));                
                 }
             }
             
