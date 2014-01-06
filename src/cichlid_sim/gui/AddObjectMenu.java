@@ -603,7 +603,7 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                           AbstractButton radioButton = (AbstractButton)color.nextElement();
                           if(radioButton.isSelected())
                           {
-                             obj.put("Breeding Status",Integer.parseInt(radioButton.getText()));
+                             obj.put("Breeding Status",Integer.valueOf(radioButton.getText()));
                           }
                   }
                   Enumeration<AbstractButton> tank = tankGroup.getElements();                  
@@ -634,8 +634,8 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                           {
                             obj.put("Size", new Float(Float.parseFloat(textFieldLength.getText())));
                             obj.put("Weight", new Float(Float.parseFloat(textFieldWeight.getText())));
-                            obj.put("Aggression", new Integer(Integer.parseInt(textFieldAggr.getText())));
-                            obj.put("Health", Integer.parseInt(textFieldHealth.getText()));                     
+                            obj.put("Aggression", new Integer(Integer.valueOf(textFieldAggr.getText())));
+                            obj.put("Health", Integer.valueOf(textFieldHealth.getText()));                     
                             obj.put("Name",textFieldName.getText());             
                             obj.put("Type", "FISH");
                             setGenAttrib(true); 
@@ -692,7 +692,7 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                 try{
                 JSONObject obj = new JSONObject();
                 obj.put("Name", textFieldName.getText());
-                obj.put("Size", new Integer(Integer.parseInt(textFieldLength.getText())));
+                obj.put("Size", new Integer(Integer.valueOf(textFieldLength.getText())));
                 objectAttrib.put(obj);
                 obj.put("Type","PLANT");               
                 PipeInit.AttribsToPipe(obj);
@@ -708,7 +708,7 @@ public class AddObjectMenu extends JDialog implements ActionListener, ChangeList
                 try{
                 JSONObject obj = new JSONObject();
                 obj.put("Name", textFieldName.getText());
-                obj.put("Size", new Integer(Integer.parseInt(textFieldLength.getText())));
+                obj.put("Size", new Integer(Integer.valueOf(textFieldLength.getText())));
                 objectAttrib.put(obj);
                 obj.put("Type","POT");               
                 PipeInit.AttribsToPipe(obj);

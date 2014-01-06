@@ -184,7 +184,7 @@ public class GenerateRandomObject extends JDialog implements ActionListener {
             else if(chckbxFish.isSelected())
             {
                 try{                                                            
-                   for(int x=0;x<Integer.parseInt(textField.getText());x++)
+                   for(int x=0;x<Integer.valueOf(textField.getText());x++)
                     {
                     generateFishAttrib();
                     }
@@ -203,7 +203,7 @@ public class GenerateRandomObject extends JDialog implements ActionListener {
             else if(chckbxPot.isSelected())
             {
                 try{                                                            
-                    for(int x=0;x<Integer.parseInt(textField_1.getText());x++)
+                    for(int x=0;x<Integer.valueOf(textField_1.getText());x++)
                     {
                     generatePotAttrib();
                     }
@@ -222,7 +222,7 @@ public class GenerateRandomObject extends JDialog implements ActionListener {
             else if(chckbxPlant.isSelected())
             {
                 try{
-                    for(int x=0;x<Integer.parseInt(textField_2.getText());x++)
+                    for(int x=0;x<Integer.valueOf(textField_2.getText());x++)
                     {
                     generatePlantAttrib();
                     }

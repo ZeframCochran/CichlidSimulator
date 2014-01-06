@@ -254,7 +254,7 @@ public class JSONArray {
         Object object = this.get(index);
         try {
             return object instanceof Number ? ((Number) object).intValue()
-                    : Integer.parseInt((String) object);
+                    : Integer.valueOf((String) object);
         } catch (Exception e) {
             throw new JSONException("JSONArray[" + index + "] is not a number.");
         }
