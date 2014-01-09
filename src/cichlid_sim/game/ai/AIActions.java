@@ -22,7 +22,7 @@ public class AIActions {
         Logger.outputToGUI(Logger.Type.INFO, "Test action fired "+instanceCount+" times.");
     }
     //Flee target fish
-    public void fleeAction(Fish myFish, Fish otherFish){
+    public void fleeAction(Fish myFish, Fish otherFish, int priority){
         double distance = otherFish.getLocation().distance(myFish.getLocation());
         if(!myFish.isBusy() && distance <  Length.cmToWorldUnits(10))
         {
@@ -30,13 +30,13 @@ public class AIActions {
             //Get the location of the bad fish
             myFish.setMoveSpeed(3);
             myFish.setDestinationLocation(GameRandomManager.getRandom3DPointWithinArenaTank(myFish.getModelBounds()));
-            myFish.setBusy((long)GameRandomManager.getRandomFloat(3)+2);
+            myFish.setBusy((long)GameRandomManager.getRandomFloat(3)+2, priority);
             //Set a destination away from that fish
             //Go to our new destination with increased speed
         }
     }
     
-    public void chaseAction(Fish myFish, Fish otherFish){
+    public void chaseAction(Fish myFish, Fish otherFish, int priority){
         double distance = otherFish.getLocation().distance(myFish.getLocation());
         if(!myFish.isBusy() && distance <  Length.cmToWorldUnits(10))
         {
@@ -44,13 +44,13 @@ public class AIActions {
             //Get the location of the chasing fish
             myFish.setMoveSpeed(2);
             myFish.setDestinationLocation(otherFish.getLocation().clone());
-            myFish.setBusy((long)GameRandomManager.getRandomFloat(3)+2);
+            myFish.setBusy((long)GameRandomManager.getRandomFloat(3)+2, priority);
             //Set a destination away from that fish
             //Go to our new destination with increased speed
         }
     }
     
-        public void interestingObject(Fish myFish, AbstractGameObject interestingObject){
+    public void interestingObject(Fish myFish, AbstractGameObject interestingObject, int priority){
         double distance = interestingObject.getWorldTranslation().distance(myFish.getLocation());
         if(!myFish.isBusy() && distance < Length.cmToWorldUnits(9))
         {
@@ -60,12 +60,8 @@ public class AIActions {
             if(interestingObject.getWorldTranslation().distance(myFish.getLocation()) < 0.5)
             {//Slow down the fish
                 myFish.setMoveSpeed((float)0.10);    
-                myFish.setBusy((long)GameRandomManager.getRandomFloat(3));
+                myFish.setBusy((long)GameRandomManager.getRandomFloat(3), priority);
             }
-            
-            
-            //Set a destination away from that fish
-            //Go to our new destination with increased speed
         }
     }
     

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="2.0.1" sequence="0" timestamp="1388994014000" analysisTimestamp="1388994536586" release="">
+<BugCollection version="2.0.1" sequence="0" timestamp="1388999909000" analysisTimestamp="1389000312062" release="">
   <Project>
     <Jar>/home/anony/Desktop/Cichlid Simulator/build</Jar>
-    <AuxClasspathEntry>/tmp/findbugs5376741022603124174.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/tmp/findbugs620753706717912689.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/tmp/findbugs7658398365535777559.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/tmp/findbugs7797314506995569751.jar</AuxClasspathEntry>
     <SrcDir>/home/anony/Desktop/Cichlid Simulator/src</SrcDir>
   </Project>
   <BugInstance type="LI_LAZY_INIT_UPDATE_STATIC" priority="2" abbrev="LI" category="MT_CORRECTNESS" instanceHash="64abe636485e8318d1bf840b1c655e79" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="8">
     <ShortMessage>Incorrect lazy initialization and update of static field</ShortMessage>
     <LongMessage>Incorrect lazy initialization and update of static field cichlid_sim.engine.action.ClickActionHandler.highlighter in cichlid_sim.engine.action.ClickActionHandler.mouseClicked()</LongMessage>
     <Class classname="cichlid_sim.engine.action.ClickActionHandler" primary="true">
-      <SourceLine classname="cichlid_sim.engine.action.ClickActionHandler" start="22" end="92" sourcefile="ClickActionHandler.java" sourcepath="cichlid_sim/engine/action/ClickActionHandler.java" relSourcepath="cichlid_sim/engine/action/ClickActionHandler.java">
-        <Message>At ClickActionHandler.java:[lines 22-92]</Message>
+      <SourceLine classname="cichlid_sim.engine.action.ClickActionHandler" start="25" end="101" sourcefile="ClickActionHandler.java" sourcepath="cichlid_sim/engine/action/ClickActionHandler.java" relSourcepath="cichlid_sim/engine/action/ClickActionHandler.java">
+        <Message>At ClickActionHandler.java:[lines 25-101]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.engine.action.ClickActionHandler</Message>
     </Class>
     <Method classname="cichlid_sim.engine.action.ClickActionHandler" name="mouseClicked" signature="()V" isStatic="true" primary="true">
-      <SourceLine classname="cichlid_sim.engine.action.ClickActionHandler" start="35" end="92" startBytecode="0" endBytecode="95" sourcefile="ClickActionHandler.java" sourcepath="cichlid_sim/engine/action/ClickActionHandler.java" relSourcepath="cichlid_sim/engine/action/ClickActionHandler.java"/>
+      <SourceLine classname="cichlid_sim.engine.action.ClickActionHandler" start="42" end="101" startBytecode="0" endBytecode="111" sourcefile="ClickActionHandler.java" sourcepath="cichlid_sim/engine/action/ClickActionHandler.java" relSourcepath="cichlid_sim/engine/action/ClickActionHandler.java"/>
       <Message>In method cichlid_sim.engine.action.ClickActionHandler.mouseClicked()</Message>
     </Method>
     <Field classname="cichlid_sim.engine.action.ClickActionHandler" name="highlighter" signature="Lcom/jme3/light/AmbientLight;" isStatic="true" primary="true" role="FIELD_ON">
@@ -26,8 +26,8 @@
       </SourceLine>
       <Message>On field cichlid_sim.engine.action.ClickActionHandler.highlighter</Message>
     </Field>
-    <SourceLine classname="cichlid_sim.engine.action.ClickActionHandler" primary="true" start="35" end="37" startBytecode="0" endBytecode="19" sourcefile="ClickActionHandler.java" sourcepath="cichlid_sim/engine/action/ClickActionHandler.java" relSourcepath="cichlid_sim/engine/action/ClickActionHandler.java">
-      <Message>At ClickActionHandler.java:[lines 35-37]</Message>
+    <SourceLine classname="cichlid_sim.engine.action.ClickActionHandler" primary="true" start="42" end="43" startBytecode="0" endBytecode="19" sourcefile="ClickActionHandler.java" sourcepath="cichlid_sim/engine/action/ClickActionHandler.java" relSourcepath="cichlid_sim/engine/action/ClickActionHandler.java">
+      <Message>At ClickActionHandler.java:[lines 42-43]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_NUMBER_CTOR" priority="2" abbrev="Bx" category="PERFORMANCE" instanceHash="4fe95cbaa04cf7d11b1710ead0c56e01" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
@@ -533,33 +533,33 @@
     <ShortMessage>Method invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</ShortMessage>
     <LongMessage>cichlid_sim.gui.AddObjectMenu.makeObjectAttrib() invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</LongMessage>
     <Class classname="cichlid_sim.gui.AddObjectMenu" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="809" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-        <Message>At AddObjectMenu.java:[lines 38-809]</Message>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="782" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+        <Message>At AddObjectMenu.java:[lines 38-782]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.AddObjectMenu</Message>
     </Class>
     <Method classname="cichlid_sim.gui.AddObjectMenu" name="makeObjectAttrib" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="605" end="750" startBytecode="0" endBytecode="1630" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="581" end="723" startBytecode="0" endBytecode="1639" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
       <Message>In method cichlid_sim.gui.AddObjectMenu.makeObjectAttrib()</Message>
     </Method>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="619" end="619" startBytecode="190" endBytecode="190" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-      <Message>At AddObjectMenu.java:[line 619]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="595" end="595" startBytecode="190" endBytecode="190" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+      <Message>At AddObjectMenu.java:[line 595]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="621" end="621" startBytecode="209" endBytecode="209" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at AddObjectMenu.java:[line 621]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="597" end="597" startBytecode="209" endBytecode="209" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at AddObjectMenu.java:[line 597]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_NUMBER_CTOR" priority="2" abbrev="Bx" category="PERFORMANCE" instanceHash="f60dabaed45b516baba621102bc12cd8" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>Method invokes inefficient Number constructor; use static valueOf instead</ShortMessage>
     <LongMessage>cichlid_sim.gui.AddObjectMenu.makeObjectAttrib() invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</LongMessage>
     <Class classname="cichlid_sim.gui.AddObjectMenu" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="809" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-        <Message>At AddObjectMenu.java:[lines 38-809]</Message>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="782" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+        <Message>At AddObjectMenu.java:[lines 38-782]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.AddObjectMenu</Message>
     </Class>
     <Method classname="cichlid_sim.gui.AddObjectMenu" name="makeObjectAttrib" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="605" end="750" startBytecode="0" endBytecode="1630" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="581" end="723" startBytecode="0" endBytecode="1639" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
       <Message>In method cichlid_sim.gui.AddObjectMenu.makeObjectAttrib()</Message>
     </Method>
     <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
@@ -570,27 +570,27 @@
       <SourceLine classname="java.lang.Integer" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
       <Message>Should call Integer.valueOf(int) instead</Message>
     </Method>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="662" end="662" startBytecode="536" endBytecode="536" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-      <Message>At AddObjectMenu.java:[line 662]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="637" end="637" startBytecode="539" endBytecode="539" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+      <Message>At AddObjectMenu.java:[line 637]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="720" end="720" startBytecode="797" endBytecode="797" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at AddObjectMenu.java:[line 720]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="695" end="695" startBytecode="803" endBytecode="803" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at AddObjectMenu.java:[line 695]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="737" end="737" startBytecode="893" endBytecode="893" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at AddObjectMenu.java:[line 737]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="711" end="711" startBytecode="902" endBytecode="902" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at AddObjectMenu.java:[line 711]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" abbrev="ST" category="STYLE" instanceHash="844597694343c738ea78e26c0c42b062" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="15">
     <ShortMessage>Write to static field from instance method</ShortMessage>
     <LongMessage>Write to static field cichlid_sim.gui.AddObjectMenu.isConfirm from instance method cichlid_sim.gui.AddObjectMenu.setConfirm(boolean)</LongMessage>
     <Class classname="cichlid_sim.gui.AddObjectMenu" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="809" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-        <Message>At AddObjectMenu.java:[lines 38-809]</Message>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="782" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+        <Message>At AddObjectMenu.java:[lines 38-782]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.AddObjectMenu</Message>
     </Class>
     <Method classname="cichlid_sim.gui.AddObjectMenu" name="setConfirm" signature="(Z)Z" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="791" end="792" startBytecode="0" endBytecode="63" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="764" end="765" startBytecode="0" endBytecode="63" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
       <Message>In method cichlid_sim.gui.AddObjectMenu.setConfirm(boolean)</Message>
     </Method>
     <Field classname="cichlid_sim.gui.AddObjectMenu" name="isConfirm" signature="Z" isStatic="true" primary="true">
@@ -599,21 +599,21 @@
       </SourceLine>
       <Message>Field cichlid_sim.gui.AddObjectMenu.isConfirm</Message>
     </Field>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="791" end="791" startBytecode="1" endBytecode="1" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-      <Message>At AddObjectMenu.java:[line 791]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="764" end="764" startBytecode="1" endBytecode="1" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+      <Message>At AddObjectMenu.java:[line 764]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" abbrev="ST" category="STYLE" instanceHash="b997a50102cba1997801e8f0fe6c27d5" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="15">
     <ShortMessage>Write to static field from instance method</ShortMessage>
     <LongMessage>Write to static field cichlid_sim.gui.AddObjectMenu.genAttribute from instance method cichlid_sim.gui.AddObjectMenu.setGenAttrib(Boolean)</LongMessage>
     <Class classname="cichlid_sim.gui.AddObjectMenu" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="809" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-        <Message>At AddObjectMenu.java:[lines 38-809]</Message>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="38" end="782" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+        <Message>At AddObjectMenu.java:[lines 38-782]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.AddObjectMenu</Message>
     </Class>
     <Method classname="cichlid_sim.gui.AddObjectMenu" name="setGenAttrib" signature="(Ljava/lang/Boolean;)Ljava/lang/Boolean;" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="782" end="783" startBytecode="0" endBytecode="69" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
+      <SourceLine classname="cichlid_sim.gui.AddObjectMenu" start="755" end="756" startBytecode="0" endBytecode="69" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java"/>
       <Message>In method cichlid_sim.gui.AddObjectMenu.setGenAttrib(Boolean)</Message>
     </Method>
     <Field classname="cichlid_sim.gui.AddObjectMenu" name="genAttribute" signature="Z" isStatic="true" primary="true">
@@ -622,21 +622,21 @@
       </SourceLine>
       <Message>Field cichlid_sim.gui.AddObjectMenu.genAttribute</Message>
     </Field>
-    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="782" end="782" startBytecode="4" endBytecode="4" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
-      <Message>At AddObjectMenu.java:[line 782]</Message>
+    <SourceLine classname="cichlid_sim.gui.AddObjectMenu" primary="true" start="755" end="755" startBytecode="4" endBytecode="4" sourcefile="AddObjectMenu.java" sourcepath="cichlid_sim/gui/AddObjectMenu.java" relSourcepath="cichlid_sim/gui/AddObjectMenu.java">
+      <Message>At AddObjectMenu.java:[line 755]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="2" abbrev="ES" category="BAD_PRACTICE" instanceHash="7923298a97b7b3c976bf1a32206551ed" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
     <ShortMessage>Comparison of String parameter using == or !=</ShortMessage>
     <LongMessage>Comparison of String parameter using == or != in cichlid_sim.gui.EditMenu.errorChecker(String) </LongMessage>
     <Class classname="cichlid_sim.gui.EditMenu" primary="true">
-      <SourceLine classname="cichlid_sim.gui.EditMenu" start="36" end="478" sourcefile="EditMenu.java" sourcepath="cichlid_sim/gui/EditMenu.java" relSourcepath="cichlid_sim/gui/EditMenu.java">
-        <Message>At EditMenu.java:[lines 36-478]</Message>
+      <SourceLine classname="cichlid_sim.gui.EditMenu" start="36" end="477" sourcefile="EditMenu.java" sourcepath="cichlid_sim/gui/EditMenu.java" relSourcepath="cichlid_sim/gui/EditMenu.java">
+        <Message>At EditMenu.java:[lines 36-477]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.EditMenu</Message>
     </Class>
     <Method classname="cichlid_sim.gui.EditMenu" name="errorChecker" signature="(Ljava/lang/String;)Z" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.EditMenu" start="441" end="478" startBytecode="0" endBytecode="77" sourcefile="EditMenu.java" sourcepath="cichlid_sim/gui/EditMenu.java" relSourcepath="cichlid_sim/gui/EditMenu.java"/>
+      <SourceLine classname="cichlid_sim.gui.EditMenu" start="440" end="477" startBytecode="0" endBytecode="77" sourcefile="EditMenu.java" sourcepath="cichlid_sim/gui/EditMenu.java" relSourcepath="cichlid_sim/gui/EditMenu.java"/>
       <Message>In method cichlid_sim.gui.EditMenu.errorChecker(String)</Message>
     </Method>
     <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
@@ -651,8 +651,8 @@
     <LocalVariable name="name" register="1" pc="1" role="LOCAL_VARIABLE_VALUE_OF">
       <Message>Value loaded from name</Message>
     </LocalVariable>
-    <SourceLine classname="cichlid_sim.gui.EditMenu" primary="true" start="441" end="441" startBytecode="3" endBytecode="3" sourcefile="EditMenu.java" sourcepath="cichlid_sim/gui/EditMenu.java" relSourcepath="cichlid_sim/gui/EditMenu.java">
-      <Message>At EditMenu.java:[line 441]</Message>
+    <SourceLine classname="cichlid_sim.gui.EditMenu" primary="true" start="440" end="440" startBytecode="3" endBytecode="3" sourcefile="EditMenu.java" sourcepath="cichlid_sim/gui/EditMenu.java" relSourcepath="cichlid_sim/gui/EditMenu.java">
+      <Message>At EditMenu.java:[line 440]</Message>
     </SourceLine>
     <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER" value="true"/>
   </BugInstance>
@@ -660,13 +660,13 @@
     <ShortMessage>Method invokes inefficient Number constructor; use static valueOf instead</ShortMessage>
     <LongMessage>cichlid_sim.gui.GenerateRandomObject.generateFishAttrib() invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</LongMessage>
     <Class classname="cichlid_sim.gui.GenerateRandomObject" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="298" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-        <Message>At GenerateRandomObject.java:[lines 25-298]</Message>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="297" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+        <Message>At GenerateRandomObject.java:[lines 25-297]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.GenerateRandomObject</Message>
     </Class>
     <Method classname="cichlid_sim.gui.GenerateRandomObject" name="generateFishAttrib" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="240" end="254" startBytecode="0" endBytecode="343" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="240" end="253" startBytecode="0" endBytecode="343" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
       <Message>In method cichlid_sim.gui.GenerateRandomObject.generateFishAttrib()</Message>
     </Method>
     <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
@@ -677,30 +677,30 @@
       <SourceLine classname="java.lang.Integer" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
       <Message>Should call Integer.valueOf(int) instead</Message>
     </Method>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="248" end="248" startBytecode="126" endBytecode="126" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-      <Message>At GenerateRandomObject.java:[line 248]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="247" end="247" startBytecode="126" endBytecode="126" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+      <Message>At GenerateRandomObject.java:[line 247]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="249" end="249" startBytecode="152" endBytecode="152" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="248" end="248" startBytecode="152" endBytecode="152" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at GenerateRandomObject.java:[line 248]</Message>
+    </SourceLine>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="249" end="249" startBytecode="178" endBytecode="178" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
       <Message>Another occurrence at GenerateRandomObject.java:[line 249]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="250" end="250" startBytecode="178" endBytecode="178" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at GenerateRandomObject.java:[line 250]</Message>
-    </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="252" end="252" startBytecode="218" endBytecode="218" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at GenerateRandomObject.java:[line 252]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="251" end="251" startBytecode="218" endBytecode="218" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at GenerateRandomObject.java:[line 251]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_NUMBER_CTOR" priority="2" abbrev="Bx" category="PERFORMANCE" instanceHash="c065fc964ffba30038a7924ebaeaacd1" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>Method invokes inefficient Number constructor; use static valueOf instead</ShortMessage>
     <LongMessage>cichlid_sim.gui.GenerateRandomObject.generatePlantAttrib() invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</LongMessage>
     <Class classname="cichlid_sim.gui.GenerateRandomObject" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="298" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-        <Message>At GenerateRandomObject.java:[lines 25-298]</Message>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="297" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+        <Message>At GenerateRandomObject.java:[lines 25-297]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.GenerateRandomObject</Message>
     </Class>
     <Method classname="cichlid_sim.gui.GenerateRandomObject" name="generatePlantAttrib" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="258" end="265" startBytecode="0" endBytecode="158" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="257" end="264" startBytecode="0" endBytecode="158" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
       <Message>In method cichlid_sim.gui.GenerateRandomObject.generatePlantAttrib()</Message>
     </Method>
     <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
@@ -711,24 +711,24 @@
       <SourceLine classname="java.lang.Integer" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
       <Message>Should call Integer.valueOf(int) instead</Message>
     </Method>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="261" end="261" startBytecode="45" endBytecode="45" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-      <Message>At GenerateRandomObject.java:[line 261]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="260" end="260" startBytecode="45" endBytecode="45" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+      <Message>At GenerateRandomObject.java:[line 260]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="262" end="262" startBytecode="71" endBytecode="71" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at GenerateRandomObject.java:[line 262]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="261" end="261" startBytecode="71" endBytecode="71" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at GenerateRandomObject.java:[line 261]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_NUMBER_CTOR" priority="2" abbrev="Bx" category="PERFORMANCE" instanceHash="39021523246ec78f90ba30bba9edc673" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>Method invokes inefficient Number constructor; use static valueOf instead</ShortMessage>
     <LongMessage>cichlid_sim.gui.GenerateRandomObject.generatePotAttrib() invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</LongMessage>
     <Class classname="cichlid_sim.gui.GenerateRandomObject" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="298" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-        <Message>At GenerateRandomObject.java:[lines 25-298]</Message>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="297" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+        <Message>At GenerateRandomObject.java:[lines 25-297]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.GenerateRandomObject</Message>
     </Class>
     <Method classname="cichlid_sim.gui.GenerateRandomObject" name="generatePotAttrib" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="269" end="276" startBytecode="0" endBytecode="158" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="268" end="275" startBytecode="0" endBytecode="158" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
       <Message>In method cichlid_sim.gui.GenerateRandomObject.generatePotAttrib()</Message>
     </Method>
     <Method classname="java.lang.Integer" name="&lt;init&gt;" signature="(I)V" isStatic="false" role="METHOD_CALLED">
@@ -739,24 +739,24 @@
       <SourceLine classname="java.lang.Integer" sourcefile="Integer.java" sourcepath="java/lang/Integer.java"/>
       <Message>Should call Integer.valueOf(int) instead</Message>
     </Method>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="272" end="272" startBytecode="45" endBytecode="45" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-      <Message>At GenerateRandomObject.java:[line 272]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="271" end="271" startBytecode="45" endBytecode="45" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+      <Message>At GenerateRandomObject.java:[line 271]</Message>
     </SourceLine>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="273" end="273" startBytecode="71" endBytecode="71" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at GenerateRandomObject.java:[line 273]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="272" end="272" startBytecode="71" endBytecode="71" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at GenerateRandomObject.java:[line 272]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" abbrev="ST" category="STYLE" instanceHash="f6a85ba57dbaabe84ec12996eda9111b" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="15">
     <ShortMessage>Write to static field from instance method</ShortMessage>
     <LongMessage>Write to static field cichlid_sim.gui.GenerateRandomObject.isConfirm from instance method cichlid_sim.gui.GenerateRandomObject.setConfirm(boolean)</LongMessage>
     <Class classname="cichlid_sim.gui.GenerateRandomObject" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="298" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-        <Message>At GenerateRandomObject.java:[lines 25-298]</Message>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="297" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+        <Message>At GenerateRandomObject.java:[lines 25-297]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.GenerateRandomObject</Message>
     </Class>
     <Method classname="cichlid_sim.gui.GenerateRandomObject" name="setConfirm" signature="(Z)Z" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="297" end="298" startBytecode="0" endBytecode="63" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="296" end="297" startBytecode="0" endBytecode="63" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
       <Message>In method cichlid_sim.gui.GenerateRandomObject.setConfirm(boolean)</Message>
     </Method>
     <Field classname="cichlid_sim.gui.GenerateRandomObject" name="isConfirm" signature="Z" isStatic="true" primary="true">
@@ -765,21 +765,21 @@
       </SourceLine>
       <Message>Field cichlid_sim.gui.GenerateRandomObject.isConfirm</Message>
     </Field>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="297" end="297" startBytecode="1" endBytecode="1" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-      <Message>At GenerateRandomObject.java:[line 297]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="296" end="296" startBytecode="1" endBytecode="1" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+      <Message>At GenerateRandomObject.java:[line 296]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" abbrev="ST" category="STYLE" instanceHash="9b190f75dd6de53f8d614df140667dd" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="15">
     <ShortMessage>Write to static field from instance method</ShortMessage>
     <LongMessage>Write to static field cichlid_sim.gui.GenerateRandomObject.genAttribute from instance method cichlid_sim.gui.GenerateRandomObject.setGenAttrib(Boolean)</LongMessage>
     <Class classname="cichlid_sim.gui.GenerateRandomObject" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="298" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-        <Message>At GenerateRandomObject.java:[lines 25-298]</Message>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="25" end="297" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+        <Message>At GenerateRandomObject.java:[lines 25-297]</Message>
       </SourceLine>
       <Message>In class cichlid_sim.gui.GenerateRandomObject</Message>
     </Class>
     <Method classname="cichlid_sim.gui.GenerateRandomObject" name="setGenAttrib" signature="(Ljava/lang/Boolean;)Ljava/lang/Boolean;" isStatic="false" primary="true">
-      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="284" end="285" startBytecode="0" endBytecode="69" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
+      <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" start="283" end="284" startBytecode="0" endBytecode="69" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java"/>
       <Message>In method cichlid_sim.gui.GenerateRandomObject.setGenAttrib(Boolean)</Message>
     </Method>
     <Field classname="cichlid_sim.gui.GenerateRandomObject" name="genAttribute" signature="Z" isStatic="true" primary="true">
@@ -788,8 +788,8 @@
       </SourceLine>
       <Message>Field cichlid_sim.gui.GenerateRandomObject.genAttribute</Message>
     </Field>
-    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="284" end="284" startBytecode="4" endBytecode="4" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
-      <Message>At GenerateRandomObject.java:[line 284]</Message>
+    <SourceLine classname="cichlid_sim.gui.GenerateRandomObject" primary="true" start="283" end="283" startBytecode="4" endBytecode="4" sourcefile="GenerateRandomObject.java" sourcepath="cichlid_sim/gui/GenerateRandomObject.java" relSourcepath="cichlid_sim/gui/GenerateRandomObject.java">
+      <Message>At GenerateRandomObject.java:[line 283]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_NUMBER_CTOR" priority="2" abbrev="Bx" category="PERFORMANCE" instanceHash="64cc39e6f5e4f3210eb33982d3b4985" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
@@ -973,9 +973,9 @@
     <SourceLine classname="cichlid_sim.gui.LogReport" primary="true" start="164" end="164" startBytecode="126" endBytecode="126" sourcefile="LogReport.java" sourcepath="cichlid_sim/gui/LogReport.java" relSourcepath="cichlid_sim/gui/LogReport.java">
       <Message>At LogReport.java:[line 164]</Message>
     </SourceLine>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="file"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" abbrev="ST" category="STYLE" instanceHash="4a9b5b39de25a1869c261bebb52d9f1" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
     <ShortMessage>Write to static field from instance method</ShortMessage>
@@ -1393,10 +1393,10 @@ there is no easy way to eliminate these false positives.
     <MissingClass>org.drools.rule.Package</MissingClass>
     <MissingClass>org.drools.runtime.rule.FactHandle</MissingClass>
   </Errors>
-  <FindBugsSummary timestamp="Sun, 5 Jan 2014 23:40:14 -0800" total_classes="65" referenced_classes="442" total_bugs="45" total_size="4932" num_packages="13" vm_version="20.0-b12" cpu_seconds="57.71" clock_seconds="59.22" peak_mbytes="302.82" alloc_mbytes="455.12" gc_seconds="1.94" priority_2="32" priority_1="13">
+  <FindBugsSummary timestamp="Mon, 6 Jan 2014 01:18:29 -0800" total_classes="65" referenced_classes="442" total_bugs="45" total_size="4939" num_packages="13" vm_version="20.0-b12" cpu_seconds="61.26" clock_seconds="56.02" peak_mbytes="298.60" alloc_mbytes="455.12" gc_seconds="2.00" priority_2="32" priority_1="13">
     <FileStats path="cichlid_sim/Starter.java" bugCount="0" size="27"/>
     <FileStats path="cichlid_sim/engine/action/AxesToggleActionHandler.java" bugCount="0" size="41"/>
-    <FileStats path="cichlid_sim/engine/action/ClickActionHandler.java" bugCount="1" size="35" bugHash="b3f50dbe10e26c6c36e3d77acaa9bbbf"/>
+    <FileStats path="cichlid_sim/engine/action/ClickActionHandler.java" bugCount="1" size="39" bugHash="1b993fd33d7b737b800edaa5768dd572"/>
     <FileStats path="cichlid_sim/engine/action/PauseActionHandler.java" bugCount="0" size="9"/>
     <FileStats path="cichlid_sim/engine/action/TimeManipulationActionHandler.java" bugCount="0" size="69"/>
     <FileStats path="cichlid_sim/engine/app/GameAppManager.java" bugCount="0" size="9"/>
@@ -1415,7 +1415,7 @@ there is no easy way to eliminate these false positives.
     <FileStats path="cichlid_sim/engine/scene/models/Models.java" bugCount="0" size="99"/>
     <FileStats path="cichlid_sim/engine/util/GameRandomManager.java" bugCount="0" size="21"/>
     <FileStats path="cichlid_sim/engine/util/Length.java" bugCount="0" size="10"/>
-    <FileStats path="cichlid_sim/game/AddObject.java" bugCount="0" size="103"/>
+    <FileStats path="cichlid_sim/game/AddObject.java" bugCount="0" size="106"/>
     <FileStats path="cichlid_sim/game/MainGame.java" bugCount="0" size="146"/>
     <FileStats path="cichlid_sim/game/NodeCollection.java" bugCount="0" size="29"/>
     <FileStats path="cichlid_sim/game/PipeFromGUI.java" bugCount="0" size="49"/>
@@ -1434,10 +1434,10 @@ there is no easy way to eliminate these false positives.
     <FileStats path="cichlid_sim/game/objects/Pot.java" bugCount="0" size="16"/>
     <FileStats path="cichlid_sim/game/objects/Tank.java" bugCount="1" size="129" bugHash="2250ee1f3ca8a43722f1bc63c964f1e7"/>
     <FileStats path="cichlid_sim/gui/About.java" bugCount="0" size="164"/>
-    <FileStats path="cichlid_sim/gui/AddObjectMenu.java" bugCount="4" size="526" bugHash="d00588a2e7b9c62147f13d54a112cb96"/>
-    <FileStats path="cichlid_sim/gui/EditMenu.java" bugCount="1" size="331" bugHash="491f703b1049191847c9b0e1dfa4fd74"/>
+    <FileStats path="cichlid_sim/gui/AddObjectMenu.java" bugCount="4" size="526" bugHash="e7d3f3d3a5d4b95fe11ea3dec2da9bd9"/>
+    <FileStats path="cichlid_sim/gui/EditMenu.java" bugCount="1" size="331" bugHash="ccc7ad8f78fcc8034e7836f242959011"/>
     <FileStats path="cichlid_sim/gui/Forward.java" bugCount="0" size="125"/>
-    <FileStats path="cichlid_sim/gui/GenerateRandomObject.java" bugCount="5" size="196" bugHash="9a6911402cd53ef1506dc51c6d6d1d0f"/>
+    <FileStats path="cichlid_sim/gui/GenerateRandomObject.java" bugCount="5" size="196" bugHash="a5618da29c778d97a23070659c8a9c35"/>
     <FileStats path="cichlid_sim/gui/IsolationTankDisplayLeft.java" bugCount="3" size="104" bugHash="2605db8660b043e8f46f1c82f4f2fcb6"/>
     <FileStats path="cichlid_sim/gui/IsolationTankDisplayRight.java" bugCount="3" size="105" bugHash="17d8e1675a872d0232ce3a3031f80764"/>
     <FileStats path="cichlid_sim/gui/KeyCommands.java" bugCount="0" size="32"/>
@@ -1452,9 +1452,9 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="cichlid_sim.Starter" sourceFile="Starter.java" interface="false" size="6" bugs="0"/>
       <ClassStats class="cichlid_sim.Starter$1" sourceFile="Starter.java" interface="false" size="21" bugs="0"/>
     </PackageStats>
-    <PackageStats package="cichlid_sim.engine.action" total_bugs="1" total_types="4" total_size="154" priority_2="1">
+    <PackageStats package="cichlid_sim.engine.action" total_bugs="1" total_types="4" total_size="158" priority_2="1">
       <ClassStats class="cichlid_sim.engine.action.AxesToggleActionHandler" sourceFile="AxesToggleActionHandler.java" interface="false" size="41" bugs="0"/>
-      <ClassStats class="cichlid_sim.engine.action.ClickActionHandler" sourceFile="ClickActionHandler.java" interface="false" size="35" bugs="1" priority_2="1"/>
+      <ClassStats class="cichlid_sim.engine.action.ClickActionHandler" sourceFile="ClickActionHandler.java" interface="false" size="39" bugs="1" priority_2="1"/>
       <ClassStats class="cichlid_sim.engine.action.PauseActionHandler" sourceFile="PauseActionHandler.java" interface="false" size="9" bugs="0"/>
       <ClassStats class="cichlid_sim.engine.action.TimeManipulationActionHandler" sourceFile="TimeManipulationActionHandler.java" interface="false" size="69" bugs="0"/>
     </PackageStats>
@@ -1494,8 +1494,8 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="cichlid_sim.engine.util.GameRandomManager" sourceFile="GameRandomManager.java" interface="false" size="21" bugs="0"/>
       <ClassStats class="cichlid_sim.engine.util.Length" sourceFile="Length.java" interface="false" size="10" bugs="0"/>
     </PackageStats>
-    <PackageStats package="cichlid_sim.game" total_bugs="0" total_types="10" total_size="417">
-      <ClassStats class="cichlid_sim.game.AddObject" sourceFile="AddObject.java" interface="false" size="97" bugs="0"/>
+    <PackageStats package="cichlid_sim.game" total_bugs="0" total_types="10" total_size="420">
+      <ClassStats class="cichlid_sim.game.AddObject" sourceFile="AddObject.java" interface="false" size="100" bugs="0"/>
       <ClassStats class="cichlid_sim.game.AddObject$1" sourceFile="AddObject.java" interface="false" size="6" bugs="0"/>
       <ClassStats class="cichlid_sim.game.MainGame" sourceFile="MainGame.java" interface="false" size="146" bugs="0"/>
       <ClassStats class="cichlid_sim.game.NodeCollection" sourceFile="NodeCollection.java" interface="false" size="17" bugs="0"/>
@@ -1540,16 +1540,16 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="cichlid_sim.gui.StockTankDisplay" sourceFile="StockTankDisplay.java" interface="false" size="126" bugs="3" priority_2="2" priority_1="1"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="24225" invocations="1708" avgMicrosecondsPerInvocation="14183" maxMicrosecondsPerInvocation="347367" standardDeviationMircosecondsPerInvocation="33549"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="1940" invocations="442" avgMicrosecondsPerInvocation="4390" maxMicrosecondsPerInvocation="523487" standardDeviationMircosecondsPerInvocation="26241"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1820" invocations="1705" avgMicrosecondsPerInvocation="1067" maxMicrosecondsPerInvocation="196366" standardDeviationMircosecondsPerInvocation="5279"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="1565" invocations="442" avgMicrosecondsPerInvocation="3542" maxMicrosecondsPerInvocation="1228319" standardDeviationMircosecondsPerInvocation="58423"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1376" invocations="583" avgMicrosecondsPerInvocation="2361" maxMicrosecondsPerInvocation="630024" standardDeviationMircosecondsPerInvocation="26178"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1150" invocations="621" avgMicrosecondsPerInvocation="1852" maxMicrosecondsPerInvocation="64786" standardDeviationMircosecondsPerInvocation="4694"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1146" invocations="583" avgMicrosecondsPerInvocation="1966" maxMicrosecondsPerInvocation="81928" standardDeviationMircosecondsPerInvocation="5938"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="1062" invocations="442" avgMicrosecondsPerInvocation="2404" maxMicrosecondsPerInvocation="59223" standardDeviationMircosecondsPerInvocation="5601"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1058" invocations="583" avgMicrosecondsPerInvocation="1815" maxMicrosecondsPerInvocation="42254" standardDeviationMircosecondsPerInvocation="3881"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="761" invocations="583" avgMicrosecondsPerInvocation="1305" maxMicrosecondsPerInvocation="170307" standardDeviationMircosecondsPerInvocation="7338"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="24148" invocations="1708" avgMicrosecondsPerInvocation="14138" maxMicrosecondsPerInvocation="643464" standardDeviationMircosecondsPerInvocation="42990"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="3094" invocations="442" avgMicrosecondsPerInvocation="7000" maxMicrosecondsPerInvocation="743799" standardDeviationMircosecondsPerInvocation="44989"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="2619" invocations="442" avgMicrosecondsPerInvocation="5925" maxMicrosecondsPerInvocation="2170082" standardDeviationMircosecondsPerInvocation="103091"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="2349" invocations="1705" avgMicrosecondsPerInvocation="1378" maxMicrosecondsPerInvocation="552284" standardDeviationMircosecondsPerInvocation="13909"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1604" invocations="583" avgMicrosecondsPerInvocation="2751" maxMicrosecondsPerInvocation="662264" standardDeviationMircosecondsPerInvocation="27536"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="1524" invocations="442" avgMicrosecondsPerInvocation="3448" maxMicrosecondsPerInvocation="80733" standardDeviationMircosecondsPerInvocation="8613"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1111" invocations="583" avgMicrosecondsPerInvocation="1906" maxMicrosecondsPerInvocation="438633" standardDeviationMircosecondsPerInvocation="18255"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1062" invocations="621" avgMicrosecondsPerInvocation="1710" maxMicrosecondsPerInvocation="24576" standardDeviationMircosecondsPerInvocation="3364"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="941" invocations="583" avgMicrosecondsPerInvocation="1615" maxMicrosecondsPerInvocation="27912" standardDeviationMircosecondsPerInvocation="3051"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="907" invocations="442" avgMicrosecondsPerInvocation="2052" maxMicrosecondsPerInvocation="41790" standardDeviationMircosecondsPerInvocation="4964"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

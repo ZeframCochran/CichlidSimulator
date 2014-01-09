@@ -17,7 +17,7 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
     private float distanceToDestination;
     private Vector3f direction;
     private float moveSpeed;
-    private float size;
+    //private float size;
     private Vector3f worldUpVector = new Vector3f(0,1,0);
     private boolean moving;
     private float health;
@@ -26,7 +26,7 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
     private float breedingStatus;
     private float weight;
     private Tank.Type homeTank;
-    private boolean busy = false;
+    private int actionPriority = 0;
     private double endTime=0;
     private double initialTime;
     
@@ -67,24 +67,21 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
         }
     }
     
-        public boolean isBusy() {
+    public boolean isBusy() {
         double currentTime = TimeManipulationActionHandler.getGameTime();
-        if( (endTime - currentTime) > 0){
-            busy = true;
+        if( (endTime - currentTime) < 0){
+            actionPriority = 0;
+            return false;
         }
-        else{
-            busy = false;
-        }
-        
-        return busy;
+        return true;
     }
 
     /**
      * The fish should ignore move requests when it is busy.
      * @param time 
      */
-    public void setBusy(long time) {
-        this.busy = true;
+    public void setBusy(long time, int priority) {
+        this.actionPriority = priority;
         initialTime = TimeManipulationActionHandler.getGameTime();
         endTime = time+initialTime;
     }
@@ -165,6 +162,7 @@ public class Fish extends Abstract3DModelGameObject implements cichlid_sim.engin
         return this.aggression;
     }
     
+    @Override
     public float getSize() {
         return this.size;
     }

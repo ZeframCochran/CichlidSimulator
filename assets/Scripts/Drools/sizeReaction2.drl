@@ -8,5 +8,5 @@ when
     
 then
     //Chase action
-    (new AIActions()).chaseAction(otherFish, thisFish);
+    (new AIActions()).chaseAction(otherFish, thisFish, 600);
 end

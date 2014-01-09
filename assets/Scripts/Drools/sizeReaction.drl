@@ -5,8 +5,6 @@ rule "Act when a larger fish is near"
 when
     otherFish:Fish ($size : size)//Bind the size to a variable called $size
     thisFish:Fish(size < $size)//compare this fishe's size to the other's
-    
 then
-    //Flee action
-    (new AIActions()).fleeAction(thisFish, otherFish);
+    (new AIActions()).fleeAction(thisFish, otherFish, 1000);
 end
